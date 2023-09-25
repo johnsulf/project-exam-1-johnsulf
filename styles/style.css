@@ -1,0 +1,55 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #F8F9FA;
+    font-family: 'Lora', serif;
+}
+
+header,
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2rem;
+    background-color: #fff;
+}
+
+header {
+    padding: 1rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+nav {
+    gap: 1rem;
+}
+
+main {
+    max-width: 900px;
+    margin: auto;
+}
+
+.welcome {
+    display: flex;
+}
+
+.welcome h1,
+.welcome_text {
+    flex: 1;
+}
+
+.cta {
+    background-color: #7FDBFF;
+    padding: .5rem 4rem;
+    border-radius: 18px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+h1,
+h2,
+h3,
+a {
+    font-family: 'Nunito', sans-serif;
+}
