@@ -8,34 +8,83 @@
         content="Welcome to puttingLAB, your definitive source for disc golf putting techniques, drills, and tips to improve your game.">
     <title>puttingLAB: Your Guide to Mastering Disc Golf Putting</title>
     <link rel="stylesheet" href="/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito:wght@400;500;600;700;800;900;1000&display=swap"
-        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/88c643a80f.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
-        <p>puttingLAB</p>
-        <input type="search" name="search" id="search">
+        <i class="fa-solid fa-bars tc-pri"></i>
+        <div class="title">
+            <span class="fw-600">putting</span><span class="fw-900">LAB</span>
+        </div>
+        <i class="fa-solid fa-magnifying-glass tc-pri"></i>
+    </header>
+    <main>
+
+        <section class="welcome | my-2 px-1 ta-center">
+            <h1>Master putting at puttingLAB Blog</h1>
+            <div class="welcome__text">
+                <p class="my-1">
+                    Welcome to puttingLAB, your go-to resource for improving your putt.
+                    Our curated tips, drills, and articles are designed to make the last 30 feet your sweet spot.
+                    Elevate your game with us today.
+                </p>
+                <button class="cta | w-full fs-m">blogs</button>
+            </div>
+        </section>
+
+        <section class="recent-blog | my-2">
+            <img class="recent-blog__img" src="assets/images/man_2.png" alt="" srcset="">
+            <div class="recent-blog__content">
+                <div class="recent-blog__content_category">
+                    <p class="tt-up fs-xs tc-acc">category</p>
+                </div>
+                <p class="recent-blog__content_title | fw-800">
+                    Title of the most recent blogpost, that sometimes can be quite long
+                </p>
+                <div class="recent-blog__content_bottom">
+                    <p class="fs-s fw-700">Author Authorson</p>
+                    <p class="fs-s">Sep 22, 2023</p>
+                    <button class="cta">read</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories | my-2 mx-1">
+            <h2>Categories</h2>
+            <div class="categories__cards">
+                <div class="categories__cards_card">
+                    <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">
+                    <p class="categories__cards_card__title | fs-s fw-700">Category</p>
+                </div>
+                <div class="categories__cards_card">
+                    <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">
+                    <p class="categories__cards_card__title | fs-s fw-700">Category</p>
+                </div>
+                <div class="categories__cards_card">
+                    <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">
+                    <p class="categories__cards_card__title | fs-s fw-700">Category</p>
+                </div>
+                <div class="categories__cards_card">
+                    <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">
+                    <p class="categories__cards_card__title | fs-s fw-700">Category</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="latest-posts | my-2">
+            <h2 class="mx-1">Latest Posts</h2>
+        </section>
+
+    </main>
+    <footer>
         <nav>
             <a href="#">home</a>
             <a href="#">blogs</a>
             <a href="#">contact</a>
         </nav>
-    </header>
-    <main>
-        <section class="welcome">
-            <h1>Master putting at puttingLAB Blog</h1>
-            <div class="welcome_text">
-                <p>Welcome to puttingLAB, your go-to resource for improving your putt. Our curated tips, drills, and
-                    articles are designed to make the last 30 feet your sweet spot. Elevate your game with us today.</p>
-                <a class="cta" href="#">blogs</a>
-            </div>
-        </section>
-    </main>
-    <footer></footer>
+        <p class="mb-1 fs-s">© 2023 puttingLAB, All Rights Reserved</p>
+    </footer>
 </body>
 
 </html>

@@ -1,0 +1,87 @@
+@import url(variables.css);
+
+/* font families */
+body { 
+    font-family: var(--ff-body); 
+    background-color: var(--clr-bg);
+}
+
+h1, h2, h3, a, button, .title, .recent-blog, .categories__cards_card  { 
+    font-family: var(--ff-headers); 
+    color: var(--clr-pri);
+}
+
+h1 { font-size: var(--s-250); }
+h2 { font-size: var(--s-200); }
+h3 { font-size: var(--s-150); }
+
+/* text colors */
+.tc-pri { color: var(--clr-pri); }
+.tc-sec { color: var(--clr-sec); }
+.tc-acc { color: var(--clr-acc); }
+
+.tc-pri70 { color: var(--clr-pri70); }
+
+/* font sizes */
+.fs-xs { font-size: var(--s-50); }
+.fs-s { font-size: var(--s-75); }
+.fs-m { font-size: var(--s-100); }
+.fs-l { font-size: var(--s-150); }
+.fs-xl { font-size: var(--s-200); }
+.fs-xxl { font-size: var(--s-300); }
+.fs-xxxl { font-size: var(--s-400); }
+
+/* font weights */
+.fw-400 { font-weight: 400; }
+.fw-500 { font-weight: 500; }
+.fw-600 { font-weight: 600; }
+.fw-700 { font-weight: 700; }
+.fw-800 { font-weight: 800; }
+.fw-900 { font-weight: 900; }
+.fw-1000 { font-weight: 1000; }
+
+/* other text properties */
+.ta-center { text-align: center; }
+.td-under { text-decoration: underline; }
+.tt-up { text-transform: uppercase; }
+.tt-cap { text-transform: capitalize; }
+
+/* background colors */
+.bg-clr { background-color: var(--clr-bg); }
+.bg-pri { background-color: var(--clr-pri); }
+.bg-sec { background-color: var(--clr-sec); }
+
+.bg-white { background-color: var(--clr-white); }
+
+.bg-pri20 { background-color: var(--clr-sec40); }
+.bg-sec40 { background-color: var(--clr-sec40); }
+.bg-acc40 { background-color: var(--clr-acc40); }
+
+/* margin */
+.m-1 { margin: var(--s-75); }
+.m-2 { margin: var(--s-150); }
+
+.mx-1 { margin-inline: var(--s-75); }
+.mx-2 { margin-inline: var(--s-150); }
+
+.my-1 { margin-block: var(--s-75); }
+.my-2 { margin-block: var(--s-150); }
+
+.mb-1 { margin-bottom: var(--s-75); }
+.mb-2 { margin-bottom: var(--s-150); }
+
+/* padding */
+.p-1 { padding: var(--s-75); }
+.p-2 { padding: var(--s-150); }
+
+.px-1 { padding-inline: var(--s-75); }
+.px-2 { padding-inline: var(--s-150); }
+
+.py-1 { padding-block: var(--s-75); }
+.py-2 { padding-block: var(--s-150); }
+
+/* widths */
+.w-full { width: 100%; }
+.w-75 { width: 75%; }
+.w-half { width: 50%; }
+.w-25 { width: 25%; }
