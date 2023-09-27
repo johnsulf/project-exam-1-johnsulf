@@ -6,7 +6,7 @@ body {
     background-color: var(--clr-bg);
 }
 
-h1, h2, h3, a, button, .title, .blog-card, .categories__cards_card  { 
+h1, h2, h3, a, button, .title, .blog-card, .categories__cards_card, .loading-container  { 
     font-family: var(--ff-headers); 
     color: var(--clr-pri);
 }

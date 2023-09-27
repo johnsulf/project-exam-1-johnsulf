@@ -1,5 +1,6 @@
 @import url(imports/constants.css);
 @import url(imports/variables.css);
+@import url(/components/loader/loader.css);
 
 * {
     margin: 0;
@@ -18,7 +19,6 @@ header {
 }
 
 .title {
-
     padding: var(--s-50) var(--s-200);
     background-color: var(--clr-sec40);
     font-size: var(--s-150);
@@ -109,6 +109,12 @@ footer nav a {
     flex-wrap: wrap;
 }
 
+.categories__cards_card > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .categories__cards_card {
     display: flex;
     justify-content: space-between;
@@ -125,37 +131,31 @@ footer nav a {
 
 .categories__cards_card__img {
     flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 3rem;
+    height: var(--s-300);
     object-fit: contain;
     background-color: var(--clr-pri20);
-    padding: var(--s-100);
+    padding: var(--s-50);
     border-radius: var(--r-1-00-1)
 }
 
 .categories__cards_card__title {
     flex: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .latest-posts__posts {
     display: flex;
-    flex-direction: row;
     overflow-x: scroll;
+
     gap: var(--s-100);
     background-color: var(--clr-white);
-    border-radius: var(--r-1);
+    border-radius: var(--r-2);
     padding: var(--s-200) var(--s-100);
     scroll-snap-type: mandatory x;
 }
 
 .latest-posts__posts .blog-card {
-    flex: 0 0 calc(65% - var(--s-100)); 
     scroll-snap-align: start;
+    flex: 0 0 calc(65% - var(--s-100)); 
 }
 
 

@@ -76,37 +76,8 @@
 
         <section class="latest-posts | my-2">
             <h2 class="mx-1">Latest Posts</h2>
+            <div id="latestPostsLoader" class="loading-container"></div>
             <div class="latest-posts__posts">
-                <div class="blog-card | bs-1">
-                    <img class="blog-card__img | h-10" src="assets/images/man_1.png" alt="" srcset="">
-                    <div class="blog-card__content | bg-sec40 py-2 px-1">
-                        <div class="blog-card__content_category">
-                            <p class="tt-up fs-xs">category</p>
-                        </div>
-                        <p class="blog-card__content_title | fs-s fw-800">
-                            Title of the blogpost, over two lines
-                        </p>
-                        <div class="blog-card__content_bottom">
-                            <p class="fs-xs fw-700">Author Authorson</p>
-                            <p class="fs-xs">Sep 22, 2023</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-card | bs-1">
-                    <img class="blog-card__img | h-10" src=" assets/images/woman_1.png" alt="" srcset="">
-                    <div class="blog-card__content | bg-sec40 py-2 px-1">
-                        <div class="blog-card__content_category">
-                            <p class="tt-up fs-xs">category</p>
-                        </div>
-                        <p class="blog-card__content_title | fs-s fw-800">
-                            Title of the blogpost, over two lines
-                        </p>
-                        <div class="blog-card__content_bottom">
-                            <p class="fs-xs fw-700">Author Authorson</p>
-                            <p class="fs-xs">Sep 22, 2023</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -119,6 +90,10 @@
         </nav>
         <p class="mb-1 fs-s">© 2023 puttingLAB, All Rights Reserved</p>
     </footer>
+
+
+    <script type="module" src="/components/loader/loader.js"></script>
+    <script type="module" src="/js/index.js"></script>
 </body>
 
 </html>
