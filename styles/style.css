@@ -25,9 +25,14 @@ header {
     border-radius: var(--r-1-000);
 }
 
-footer, footer nav, .welcome, .recent-blog__content {
+footer, footer nav, .welcome, .blog-card__content {
     display: flex;
     flex-direction: column;
+}
+
+.categories__cards_card:hover, .latest-posts__posts .blog-card:hover, .cta:hover  {
+    cursor: pointer;
+    filter: brightness(var(--b-hover));
 }
 
 footer {
@@ -63,41 +68,36 @@ footer nav a {
     transition: var(--transition);
 }
 
-.cta:hover {
-    background-color: var(--clr-ter);
-}
-
-.recent-blog {
+.blog-card {
     background-color: var(--clr-white);
     border-radius: var(--r-2);
+    transition: var(--transition);
 }
 
-.recent-blog__img {
+.blog-card__img {
     width: 100%;
-    height: 15rem;
     object-fit: contain;
     background-color: var(--clr-white);
     border-radius: var(--r-22-00);
 }
 
-.recent-blog__content {
+.blog-card__content {
     position: relative;
-    gap: var(--s-100);
-    padding: var(--s-250) var(--s-150);
-    background-color: var(--clr-acc40);
+    gap: var(--s-50);
     border-radius: var(--r-00-22);
 }
 
-.recent-blog__content_category {
+.blog-card__content_category {
     position: absolute;
     top: -0.75rem;
 
+    color: var(--clr-acc);
     background-color: var(--clr-pri);
     border-radius: var(--r-1-0-1-0);
     padding: var(--s-25) var(--s-100);
 }
 
-.recent-blog__content_bottom {
+.blog-card__content_bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -123,10 +123,6 @@ footer nav a {
     margin: var(--s-25);
 }
 
-.categories__cards_card:hover {
-    background-color: var(--clr-pri20);
-}
-
 .categories__cards_card__img {
     flex: 1;
     display: flex;
@@ -144,6 +140,22 @@ footer nav a {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
+
+.latest-posts__posts {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    gap: var(--s-100);
+    background-color: var(--clr-white);
+    border-radius: var(--r-1);
+    padding: var(--s-200) var(--s-100);
+    scroll-snap-type: mandatory x;
+}
+
+.latest-posts__posts .blog-card {
+    flex: 0 0 calc(65% - var(--s-100)); 
+    scroll-snap-align: start;
+}
+
 

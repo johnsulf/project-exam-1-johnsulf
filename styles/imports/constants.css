@@ -6,7 +6,7 @@ body {
     background-color: var(--clr-bg);
 }
 
-h1, h2, h3, a, button, .title, .recent-blog, .categories__cards_card  { 
+h1, h2, h3, a, button, .title, .blog-card, .categories__cards_card  { 
     font-family: var(--ff-headers); 
     color: var(--clr-pri);
 }
@@ -73,15 +73,36 @@ h3 { font-size: var(--s-150); }
 /* padding */
 .p-1 { padding: var(--s-75); }
 .p-2 { padding: var(--s-150); }
+.p-3 { padding: var(--s-200); }
+.p-4 { padding: var(--s-250); }
 
 .px-1 { padding-inline: var(--s-75); }
 .px-2 { padding-inline: var(--s-150); }
+.px-3 { padding-inline: var(--s-200); }
+.px-4 { padding-inline: var(--s-250); }
 
 .py-1 { padding-block: var(--s-75); }
 .py-2 { padding-block: var(--s-150); }
+.py-3 { padding-block: var(--s-200); }
+.py-4 { padding-block: var(--s-250); }
 
 /* widths */
+
+/* percents */
 .w-full { width: 100%; }
 .w-75 { width: 75%; }
 .w-half { width: 50%; }
 .w-25 { width: 25%; }
+
+/* heights */
+
+/* rem */
+.h-15 { height: 15rem; }
+.h-10 { height: 10rem; }
+.h-5 { height: 5rem; }
+
+
+/* box-shadows */
+.bs-1 {
+    box-shadow: var(--bs-1);
+}

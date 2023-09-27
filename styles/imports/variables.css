@@ -58,4 +58,7 @@
 
     /* transitions */
     --transition: all 0.3s ease-in-out;
+
+    /* brightness filter */
+    --b-hover: 0.9;
 }
