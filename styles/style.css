@@ -10,12 +10,19 @@
 
 header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: var(--s-200) var(--s-100);
+    justify-content: center;
+    width: 100%;
     background-color: var(--clr-white);
     border-radius: var(--r-00-22);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1300px;
+    padding: var(--s-200) var(--s-100);
 }
 
 .title {
@@ -25,12 +32,17 @@ header {
     border-radius: var(--r-1-000);
 }
 
-footer, footer nav, .welcome, .blog-card__content {
+footer, 
+footer nav, 
+.welcome,
+.blog-card__content {
     display: flex;
     flex-direction: column;
 }
 
-.categories__cards_card:hover, .latest-posts__posts .blog-card:hover, .cta:hover  {
+.categories__cards_card:hover, 
+.latest-posts__posts .blog-card:hover, 
+.cta:hover  {
     cursor: pointer;
     filter: brightness(var(--b-hover));
 }
@@ -51,9 +63,17 @@ footer nav {
     margin-block: var(--s-400);
 }
 
-footer nav a {
-    color: var(--clr-white);
+ nav a {
     text-decoration: none;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
 }
 
 .cta {
@@ -69,6 +89,7 @@ footer nav a {
 }
 
 .blog-card {
+    text-decoration: none;
     border-radius: var(--r-2);
     transition: var(--transition);
 }
@@ -100,27 +121,24 @@ footer nav a {
     padding: var(--s-25) var(--s-100);
 }
 
-.blog-card__content_bottom {
+.blog-card__content_bottom,
+.categories__cards,
+.categories__cards_card > *,
+.categories__cards_card   {
     display: flex;
     justify-content: space-between;
+}
+
+.blog-card__content_bottom, 
+.categories__cards_card > *  {
     align-items: center;
 }
 
 .categories__cards {
-    display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.categories__cards_card > * {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .categories__cards_card {
-    display: flex;
-    justify-content: space-between;
     position: relative;
     cursor: pointer;
     flex-basis: 46%;
@@ -159,3 +177,27 @@ footer nav a {
     flex: 0 0 calc(65% - var(--s-100)); 
 }
 
+#search {
+    border: none;
+
+    height: var(--s-200);
+    width: 35%;
+    max-width: 400px;
+    border-radius: var(--r-2);
+    background-color: var(--clr-bg);
+}
+
+@media screen and (min-width: 700px) {
+    body {
+        border: 2px solid red;
+    }
+    .fa-bars, .fa-magnifying-glass {
+        display: none;
+    }
+
+    header nav ul {
+        display: flex;
+        font-weight: 700;
+        gap: var(--s-100);
+    }
+}

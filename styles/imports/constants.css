@@ -20,6 +20,7 @@ h3 { font-size: var(--s-150); }
 .tc-sec { color: var(--clr-sec); }
 .tc-acc { color: var(--clr-acc); }
 
+.tc-white { color: var(--clr-white); }
 .tc-pri70 { color: var(--clr-pri70); }
 
 /* font sizes */

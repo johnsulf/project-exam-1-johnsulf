@@ -20,7 +20,7 @@ async function fetchPosts() {
             const postImg = e._embedded['wp:featuredmedia'][0];
 
             html +=
-                `<div class="blog-card | bs-1 bg-sec40">
+                `<a href="#" class="blog-card | bs-1 bg-sec40">
                     <img class="blog-card__img" src="${postImg.source_url}" alt="${postImg.alt_text}" srcset="">
                     <div class="blog-card__content |  py-2 px-1">
                         <div class="blog-card__content_category">
@@ -34,7 +34,7 @@ async function fetchPosts() {
                             <time class="fs-xs">${formattedDate(e.date)}</time>
                         </div>
                     </div>
-                </div>`;
+                </a>`;
         },
         );
         latestPostsContainer.innerHTML = html;

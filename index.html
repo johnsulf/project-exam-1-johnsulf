@@ -12,13 +12,25 @@
 </head>
 
 <body>
+
     <header>
-        <i class="fa-solid fa-bars tc-pri"></i>
-        <div class="title">
-            <span class="fw-600">putting</span><span class="fw-900">LAB</span>
-        </div>
-        <i class="fa-solid fa-magnifying-glass tc-pri"></i>
+        <section class="header-content">
+            <i class="fa-solid fa-bars tc-pri"></i>
+            <div class="title">
+                <span class="fw-600">putting</span><span class="fw-900">LAB</span>
+            </div>
+            <input type="search" name="search" id="search">
+            <i class="fa-solid fa-magnifying-glass tc-pri"></i>
+            <nav>
+                <ul>
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">blogs</a></li>
+                    <li><a href="#">contact</a></li>
+                </ul>
+            </nav>
+        </section>
     </header>
+
     <main>
 
         <section class="welcome | my-2 px-1 ta-center">
@@ -76,7 +88,7 @@
 
         <section class="latest-posts | my-4">
             <h2 class="mx-1">Latest Posts</h2>
-            <div class="latest-posts__posts">    
+            <div class="latest-posts__posts">
                 <div id="latestPostsLoader" class="loading-container"></div>
             </div>
         </section>
@@ -84,9 +96,12 @@
     </main>
     <footer>
         <nav>
-            <a href="#">home</a>
-            <a href="#">blogs</a>
-            <a href="#">contact</a>
+            <ul>
+                <li><a href="#" class="tc-white">home</a></li>
+                <li><a href="#" class="tc-white">blogs</a></li>
+                <li><a href="#" class="tc-white">contact</a></li>
+
+            </ul>
         </nav>
         <p class="mb-1 fs-s">© 2023 puttingLAB, All Rights Reserved</p>
     </footer>
