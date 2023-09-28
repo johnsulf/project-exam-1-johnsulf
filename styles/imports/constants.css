@@ -66,6 +66,8 @@ h3 { font-size: var(--s-150); }
 
 .my-1 { margin-block: var(--s-75); }
 .my-2 { margin-block: var(--s-150); }
+.my-3 { margin-block: var(--s-200); }
+.my-4 { margin-block: var(--s-250); }
 
 .mb-1 { margin-bottom: var(--s-75); }
 .mb-2 { margin-bottom: var(--s-150); }

@@ -69,13 +69,13 @@ footer nav a {
 }
 
 .blog-card {
-    background-color: var(--clr-white);
     border-radius: var(--r-2);
     transition: var(--transition);
 }
 
 .blog-card__img {
     width: 100%;
+    max-height: 12rem;
     object-fit: contain;
     background-color: var(--clr-white);
     border-radius: var(--r-22-00);
@@ -83,13 +83,16 @@ footer nav a {
 
 .blog-card__content {
     position: relative;
+    justify-content: space-between;
+    height: 8rem;
     gap: var(--s-50);
     border-radius: var(--r-00-22);
 }
 
 .blog-card__content_category {
     position: absolute;
-    top: -0.75rem;
+    top: -1rem;
+    max-width: 75%;
 
     color: var(--clr-acc);
     background-color: var(--clr-pri);
@@ -150,12 +153,9 @@ footer nav a {
     background-color: var(--clr-white);
     border-radius: var(--r-2);
     padding: var(--s-200) var(--s-100);
-    scroll-snap-type: mandatory x;
 }
 
 .latest-posts__posts .blog-card {
-    scroll-snap-align: start;
     flex: 0 0 calc(65% - var(--s-100)); 
 }
-
 
