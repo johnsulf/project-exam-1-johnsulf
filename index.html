@@ -7,8 +7,8 @@
     <meta name="description"
         content="Welcome to puttingLAB, your definitive source for disc golf putting techniques, drills, and tips to improve your game.">
     <title>puttingLAB: Your Guide to Mastering Disc Golf Putting</title>
-    <link rel="stylesheet" href="/styles/style.css">
     <script src="https://kit.fontawesome.com/88c643a80f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/styles/style.css">
 </head>
 
 <body>
@@ -19,7 +19,7 @@
             <div class="title">
                 <span class="fw-600">putting</span><span class="fw-900">LAB</span>
             </div>
-            <input type="search" name="search" id="search">
+            <input type="search" name="search" id="search" placeholder="Search...">
             <i class="fa-solid fa-magnifying-glass tc-pri"></i>
             <nav>
                 <ul>
@@ -33,7 +33,7 @@
 
     <main>
 
-        <section class="welcome | my-2 px-1 ta-center">
+        <section class="welcome | my-2 px-1">
             <h1>Master putting at puttingLAB Blog</h1>
             <div class="welcome__text">
                 <p class="my-1">
@@ -45,45 +45,49 @@
             </div>
         </section>
 
-        <section class="recent-blog | my-4">
-            <div class="blog-card | bg-acc40">
-                <img class="blog-card__img" src="assets/images/man_2.png" alt="" srcset="">
-                <div class="blog-card__content | py-3 px-1">
-                    <div class="blog-card__content_category">
-                        <p class="tt-up fs-xs">category</p>
-                    </div>
-                    <p class="blog-card__content_title | fs-m fw-800">
-                        Title of the most recent blogpost, that sometimes can be quite long
-                    </p>
-                    <div class="blog-card__content_bottom">
-                        <p class="fs-s fw-700">Author Authorson</p>
-                        <p class="fs-s">Sep 22, 2023</p>
-                        <button class="cta">read</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <section class="recent-blog-categories">
 
-        <section class="categories | my-4 mx-1">
-            <h2>Categories</h2>
-            <div class="categories__cards">
-                <div class="categories__cards_card">
-                    <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">
-                    <p class="categories__cards_card__title | fs-s fw-700">Category</p>
+            <section class="recent-blog | my-4">
+                <div class="blog-card | bg-acc40">
+                    <img class="blog-card__img" src="assets/images/man_2.png" alt="" srcset="">
+                    <div class="blog-card__content | py-3 px-1">
+                        <div class="blog-card__content_category">
+                            <p class="tt-up fs-xs">category</p>
+                        </div>
+                        <p class="blog-card__content_title | fs-m fw-800">
+                            Title of the most recent blogpost, that sometimes can be quite long
+                        </p>
+                        <div class="blog-card__content_bottom">
+                            <p class="fs-s fw-700">Author Authorson</p>
+                            <p class="fs-s">Sep 22, 2023</p>
+                            <button class="cta">read</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="categories__cards_card">
-                    <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">
-                    <p class="categories__cards_card__title | fs-s fw-700">Category</p>
+            </section>
+
+            <section class="categories | my-4 mx-1">
+                <h2>Categories</h2>
+                <div class="categories__cards">
+                    <div class="categories__cards_card">
+                        <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">
+                        <p class="categories__cards_card__title | fs-s fw-700 mx-1">Category</p>
+                    </div>
+                    <div class="categories__cards_card">
+                        <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">
+                        <p class="categories__cards_card__title | fs-s fw-700 mx-1">Category</p>
+                    </div>
+                    <div class="categories__cards_card">
+                        <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">
+                        <p class="categories__cards_card__title | fs-s fw-700 mx-1">Category</p>
+                    </div>
+                    <div class="categories__cards_card">
+                        <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">
+                        <p class="categories__cards_card__title | fs-s fw-700 mx-1">Category</p>
+                    </div>
                 </div>
-                <div class="categories__cards_card">
-                    <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">
-                    <p class="categories__cards_card__title | fs-s fw-700">Category</p>
-                </div>
-                <div class="categories__cards_card">
-                    <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">
-                    <p class="categories__cards_card__title | fs-s fw-700">Category</p>
-                </div>
-            </div>
+            </section>
+
         </section>
 
         <section class="latest-posts | my-4">
@@ -100,7 +104,6 @@
                 <li><a href="#" class="tc-white">home</a></li>
                 <li><a href="#" class="tc-white">blogs</a></li>
                 <li><a href="#" class="tc-white">contact</a></li>
-
             </ul>
         </nav>
         <p class="mb-1 fs-s">© 2023 puttingLAB, All Rights Reserved</p>
