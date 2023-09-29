@@ -69,22 +69,7 @@
             <section class="categories | my-4 mx-1">
                 <h2>Categories</h2>
                 <div class="categories__cards">
-                    <div class="categories__cards_card">
-                        <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">
-                        <p class="categories__cards_card__title | fs-s fw-700 mx-1">Category</p>
-                    </div>
-                    <div class="categories__cards_card">
-                        <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">
-                        <p class="categories__cards_card__title | fs-s fw-700 mx-1">Category</p>
-                    </div>
-                    <div class="categories__cards_card">
-                        <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">
-                        <p class="categories__cards_card__title | fs-s fw-700 mx-1">Category</p>
-                    </div>
-                    <div class="categories__cards_card">
-                        <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">
-                        <p class="categories__cards_card__title | fs-s fw-700 mx-1">Category</p>
-                    </div>
+                    <div id="categoriesLoader" class="loading-container"></div>
                 </div>
             </section>
 
@@ -92,8 +77,15 @@
 
         <section class="latest-posts | my-4">
             <h2 class="mx-1">Latest Posts</h2>
-            <div class="latest-posts__posts">
-                <div id="latestPostsLoader" class="loading-container"></div>
+            <div class="latest-posts__container">
+                <div class="latest-posts__posts">
+                    <div id="latestPostsLoader" class="loading-container"></div>
+                </div>
+                <div class="latest-posts__amount">
+                    <i class="fa-solid fa-angle-left tc-pri"></i>
+                    <p class="fs-s"><span class="fw-700">1-4</span> of 12</p>
+                    <i class="fa-solid fa-angle-right tc-pri"></i>
+                </div>
             </div>
         </section>
 
