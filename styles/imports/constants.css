@@ -70,6 +70,9 @@ h3 { font-size: var(--s-150); }
 .my-3 { margin-block: var(--s-200); }
 .my-4 { margin-block: var(--s-250); }
 
+.mt-1 { margin-top: var(--s-75); }
+.mt-2 { margin-top: var(--s-150); }
+
 .mb-1 { margin-bottom: var(--s-75); }
 .mb-2 { margin-bottom: var(--s-150); }
 

@@ -1,4 +1,5 @@
-import { toggleLoadingIndicator } from "../components/loader/loader.js";
+import { buildCategoriesLoader } from "../components/categoriesLoader/categoriesLoader.js";
+import { toggleLoadingIndicator } from "../components/circleLoader/circleLoader.js";
 import { formattedDate } from "./helpers/timeFormatter.js";
 
 const baseUrl = "https://wp.erlendjohnsen.com/wp-json/wp/v2/"
@@ -16,9 +17,9 @@ let categoriesHtml = "";
 
 async function fetchData(url) {
     try {
-        
+
         const response = await fetch(url);
-        
+
         if (response.ok) {
             const json = await response.json();
             toggleLoadingIndicator(false, latestPostsLoader);
@@ -65,7 +66,7 @@ async function populateLatestPosts() {
 }
 
 async function populateCategories() {
-    toggleLoadingIndicator(true, categoriesLoader);
+    categoriesContainer.innerHTML = buildCategoriesLoader();
     const categories = await fetchData(baseUrl + categoriesUrl);
     if (categories) {
         categories.forEach(c => {
@@ -74,12 +75,11 @@ async function populateCategories() {
             }
             categoriesHtml +=
                 `<a href="#" class="categories__cards_card">
-                    <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">
-                    <p class="categories__cards_card__title | fs-s fw-700 mx-1">${c.name}</p>
-                </a>`;
+                        <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">
+                        <p class="categories__cards_card__title | fs-s fw-700 mx-1">${c.name}</p>
+                    </a>`;
         });
         categoriesContainer.innerHTML = categoriesHtml;
-        toggleLoadingIndicator(false, categoriesLoader);
     }
 }
 

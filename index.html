@@ -13,23 +13,7 @@
 
 <body>
 
-    <header>
-        <section class="header-content">
-            <i class="fa-solid fa-bars tc-pri"></i>
-            <div class="title">
-                <span class="fw-600">putting</span><span class="fw-900">LAB</span>
-            </div>
-            <input type="search" name="search" id="search" placeholder="Search...">
-            <i class="fa-solid fa-magnifying-glass tc-pri"></i>
-            <nav>
-                <ul>
-                    <li><a href="#">home</a></li>
-                    <li><a href="#">blogs</a></li>
-                    <li><a href="#">contact</a></li>
-                </ul>
-            </nav>
-        </section>
-    </header>
+    <header id="header"></header>
 
     <main>
 
@@ -69,7 +53,6 @@
             <section class="categories | my-4 mx-1">
                 <h2>Categories</h2>
                 <div class="categories__cards">
-                    <div id="categoriesLoader" class="loading-container"></div>
                 </div>
             </section>
 
@@ -90,20 +73,13 @@
         </section>
 
     </main>
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="#" class="tc-white">home</a></li>
-                <li><a href="#" class="tc-white">blogs</a></li>
-                <li><a href="#" class="tc-white">contact</a></li>
-            </ul>
-        </nav>
-        <p class="mb-1 fs-s">© 2023 puttingLAB, All Rights Reserved</p>
-    </footer>
 
+    <footer id="footer"></footer>
 
-    <script type="module" src="/components/loader/loader.js"></script>
     <script type="module" src="/js/index.js"></script>
+    <script type="module" src="/components/circleLoader/circleLoader.js"></script>
+    <script type="module" src="/components/header/header.js"></script>
+    <script type="module" src="/components/footer/footer.js"></script>
 </body>
 
 </html>
