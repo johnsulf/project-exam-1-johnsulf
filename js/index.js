@@ -1,73 +1,64 @@
 import { buildCategoriesLoader } from "../components/categoriesLoader/categoriesLoader.js";
-import { toggleLoadingIndicator } from "../components/circleLoader/circleLoader.js";
-import { formattedDate } from "./helpers/timeFormatter.js";
+import { toggleCircleLoader } from "../components/circleLoader/circleLoader.js";
+
+import { populateBlogCard } from "./helpers/populateBlogCard.js";
 
 const baseUrl = "https://wp.erlendjohnsen.com/wp-json/wp/v2/"
 const postsEmbedUrl = "posts?_embed";
 const categoriesUrl = "categories";
 
-const latestPostsContainer = document.querySelector(".latest-posts__posts")
-const latestPostsLoader = document.querySelector("#latestPostsLoader")
+const recentBlogContainer = document.querySelector(".recent-blog");
 
-const categoriesContainer = document.querySelector(".categories__cards")
-const categoriesLoader = document.querySelector("#categoriesLoader")
+const latestPostsContainer = document.querySelector(".latest-posts__posts");
+const latestPostsLoader = document.querySelector("#latestPostsLoader");
 
-let latestPostsHtml = "";
+const categoriesContainer = document.querySelector(".categories__cards");
+
 let categoriesHtml = "";
 
-async function fetchData(url) {
+export async function fetchData(url, container) {
     try {
-
         const response = await fetch(url);
 
         if (response.ok) {
             const json = await response.json();
-            toggleLoadingIndicator(false, latestPostsLoader);
             return json;
         } else {
-            console.error(`Failed to fetch posts: ${response.status} ${response.statusText}`);
+            console.error(`Failed to fetch data: ${response.status} ${response.statusText}`);
         }
     } catch (e) {
-        latestPostsContainer.innerHTML = `<p class="ta-center w-full">Something went wrong...</p>`;
+        container.innerHTML = `<p class="ta-center w-full">Oops... Something went wrong😞</p>`;
         console.log(e);
     }
+    container.innerHTML = `<p class="ta-center w-full">Oops... Something went wrong😞</p>`;
     return null;
 }
 
-async function populateLatestPosts() {
-    toggleLoadingIndicator(true, latestPostsLoader);
-    const posts = await fetchData(baseUrl + postsEmbedUrl);
+async function populatePosts() {
+    toggleCircleLoader(true, latestPostsLoader);
+    const posts = await fetchData(baseUrl + postsEmbedUrl, latestPostsContainer);
     if (posts) {
-        posts.forEach(p => {
-            const authorName = p._embedded.author[0].name;
-            const categoryName = p._embedded['wp:term'][0][0].name;
-            const postImg = p._embedded['wp:featuredmedia'][0];
+        let latestPostsHtml = ''; 
+        let recentBlogHtml = '';  
 
-            latestPostsHtml +=
-                `<a href="#" class="blog-card | bs-1 bg-sec40">
-                    <img class="blog-card__img" src="${postImg.source_url}" alt="${postImg.alt_text}" srcset="">
-                    <div class="blog-card__content | py-2 px-1">
-                        <div class="blog-card__content_category">
-                            <p class="tt-up fs-xs">${categoryName}</p>
-                        </div>
-                        <p class="blog-card__content_title | fs-s fw-800">
-                            ${p.title.rendered}
-                        </p>
-                        <div class="blog-card__content_bottom">
-                            <p class="fs-xs fw-700">${authorName}</p>
-                            <time class="fs-xs">${formattedDate(p.date)}</time>
-                        </div>
-                    </div>
-                </a>`;
+        posts.forEach((p, i) => {
+            if (i === 0) {
+                recentBlogHtml = populateBlogCard(p, 'recent'); 
+            } else { 
+                latestPostsHtml += populateBlogCard(p, 'latest');
+            }
         });
+
+        recentBlogContainer.innerHTML = recentBlogHtml;
         latestPostsContainer.innerHTML = latestPostsHtml;
-        toggleLoadingIndicator(false, latestPostsLoader);
+        toggleCircleLoader(false, latestPostsLoader);
     }
 }
 
+
 async function populateCategories() {
     categoriesContainer.innerHTML = buildCategoriesLoader();
-    const categories = await fetchData(baseUrl + categoriesUrl);
+    const categories = await fetchData(baseUrl + categoriesUrl, categoriesContainer);
     if (categories) {
         categories.forEach(c => {
             if (c.name === 'Uncategorized') {
@@ -75,13 +66,13 @@ async function populateCategories() {
             }
             categoriesHtml +=
                 `<a href="#" class="categories__cards_card">
-                        <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">
-                        <p class="categories__cards_card__title | fs-s fw-700 mx-1">${c.name}</p>
-                    </a>`;
+                    <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">
+                    <p class="categories__cards_card__title | fs-s fw-700 mx-1">${c.name}</p>
+                </a>`;
         });
         categoriesContainer.innerHTML = categoriesHtml;
     }
 }
 
-populateLatestPosts();
+populatePosts();
 populateCategories();
