@@ -15,8 +15,9 @@ header {
     padding: var(--s-200) var(--s-100);
 }
 
-.header-content nav {
-    display: none;
+.header-content button {
+    border: none;
+    background: none;
 }
 
 .title {
@@ -26,20 +27,90 @@ header {
     border-radius: var(--r-1-000);
 }
 
-#search {
+.search-container,
+#search, 
+.header-content nav {
     display: none;
+}
+
+.search-container {
+    width: 100%;
+}
+
+.search-container__input-results {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+#search {
     border: none;
+    width: 80%;
     text-indent: var(--s-100);
     height: var(--s-200);
-    width: 35%;
-    max-width: 400px;
     border-radius: var(--r-2);
     background-color: var(--clr-bg);
 }
 
+.search-container__results {
+    display: none;
+    position: absolute;
+    top: var(--s-200);
+    width: 80%;
+    min-height: var(--s-300);
+    background-color: var(--clr-white);
+    border-radius: var(--r-2);
+}
+
+.header-content.mobile-menu nav.nav,
+.header-content.mobile-search .search-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--clr-pri);
+}
+
+.header-content.mobile-menu nav.nav ul {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--s-100);
+}
+
+.header-content.mobile-menu nav.nav a {
+    color: var(--clr-white);
+}
+
+.menu-close, .search-close {
+    display: none;
+    position: absolute;
+    top: var(--s-250);
+    left: var(--s-100);
+}
+
+.show {
+    display: block;
+}
+
+.header-content.mobile-menu nav.nav,
+.header-content.mobile-search .search-container,
+.header-content.mobile-search .search-container__input-results,
+.header-content.mobile-search #search {
+    display: flex;
+}
+
+
 @media screen and (min-width: 700px) {
 
-    .menu-toggle, .search-toggle {
+    .menu-open, .search-open {
         display: none;
     }
 
@@ -47,8 +118,13 @@ header {
         display: block;
     }
 
+    .search-container,
+    .search-container__input-results,
     header nav ul {
         display: flex;
+     }
+
+    header nav ul {
         font-weight: 700;
         gap: var(--s-100);
     }

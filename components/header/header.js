@@ -4,23 +4,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initHeader() {
     buildHeader();
-}
+    toggleMobileFeature('.menu-open', '.menu-close', '.header-content', 'mobile-menu');
+    toggleMobileFeature('.search-open', '.search-close', '.header-content', 'mobile-search');
+    buildSearchResults();
+  }
+  
 
 function buildHeader() {
     const header = document.querySelector('#header');
-    header.innerHTML = header.innerHTML =
+    header.innerHTML =
         `<section class="header-content">
-            <a href="#" class="menu-toggle">
+            <button class="menu-open" type="button" title="Open Navigation Menu">
                 <i class="fa-solid fa-bars tc-pri"></i>
-            </a>
+            </button>
             <a href="#" class="title">
                 <span class="fw-600">putting</span><span class="fw-900">LAB</span>
             </a>
-            <input type="search" name="search" id="search" placeholder="Search...">
-            <a href="#" class="search-toggle">
+            <div class="search-container">
+                <button class="search-close" type="button" title="Close Search View">
+                    <i class="fa-solid fa-close tc-white"></i>
+                </button>
+                <div class="search-container__input-results">
+                    <input type="search" name="search" id="search" placeholder="Search...">
+                    <div class="search-container__results"></div>
+                </div>    
+            </div>
+            <button class="search-open" type="button" title="Open Search View">
                 <i class="fa-solid fa-magnifying-glass tc-pri"></i>
-            </a>
-            <nav>
+            </button>
+            <nav class="nav">
+                <button class="menu-close" type="button" title="Close Navigation Menu">
+                    <i class="fa-solid fa-close tc-white"></i>
+                </button>
                 <ul>
                     <li><a href="#">home</a></li>
                     <li><a href="#">blogs</a></li>
@@ -28,4 +43,33 @@ function buildHeader() {
                 </ul>
             </nav>
         </section>`;
+}
+
+function toggleMobileFeature(openBtnSelector, closeBtnSelector, containerSelector, toggleClass) {
+    const openBtn = document.querySelector(openBtnSelector);
+    const closeBtn = document.querySelector(closeBtnSelector);
+    const container = document.querySelector(containerSelector);
+  
+    openBtn.addEventListener('click', () => {
+      container.classList.add(toggleClass);
+      closeBtn.classList.add('show');
+    });
+  
+    closeBtn.addEventListener('click', () => {
+      container.classList.remove(toggleClass);
+      closeBtn.classList.remove('show');
+    });
+  }
+  
+
+function buildSearchResults() {
+    const searchInput = document.querySelector('#search');
+    const searchResults = document.querySelector('.search-container__results');
+    searchInput.addEventListener('focusin', () => {
+        searchResults.classList.add('show');
+    });
+
+    searchInput.addEventListener('focusout', () => {
+        searchResults.classList.remove('show');
+    });
 }
