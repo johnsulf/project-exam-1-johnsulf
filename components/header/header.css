@@ -57,7 +57,7 @@ header {
 .search-container__results {
     display: none;
     position: absolute;
-    top: var(--s-200);
+    top: var(--s-250);
     width: 80%;
     min-height: var(--s-300);
     background-color: var(--clr-white);

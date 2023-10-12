@@ -1,3 +1,5 @@
+import { buildSearchResults } from "./search.js";
+
 document.addEventListener('DOMContentLoaded', () => {
     initHeader();
 });
@@ -7,8 +9,8 @@ function initHeader() {
     toggleMobileFeature('.menu-open', '.menu-close', '.header-content', 'mobile-menu');
     toggleMobileFeature('.search-open', '.search-close', '.header-content', 'mobile-search');
     buildSearchResults();
-  }
-  
+}
+
 
 function buildHeader() {
     const header = document.querySelector('#header');
@@ -25,8 +27,8 @@ function buildHeader() {
                     <i class="fa-solid fa-close tc-white"></i>
                 </button>
                 <div class="search-container__input-results">
-                    <input type="search" name="search" id="search" placeholder="Search...">
-                    <div class="search-container__results"></div>
+                    <input type="search" name="search" id="search" placeholder="Search for blog titles">
+                    <div class="search-container__results | p-2"></div>
                 </div>    
             </div>
             <button class="search-open" type="button" title="Open Search View">
@@ -49,27 +51,14 @@ function toggleMobileFeature(openBtnSelector, closeBtnSelector, containerSelecto
     const openBtn = document.querySelector(openBtnSelector);
     const closeBtn = document.querySelector(closeBtnSelector);
     const container = document.querySelector(containerSelector);
-  
+
     openBtn.addEventListener('click', () => {
-      container.classList.add(toggleClass);
-      closeBtn.classList.add('show');
+        container.classList.add(toggleClass);
+        closeBtn.classList.add('show');
     });
-  
+
     closeBtn.addEventListener('click', () => {
-      container.classList.remove(toggleClass);
-      closeBtn.classList.remove('show');
-    });
-  }
-  
-
-function buildSearchResults() {
-    const searchInput = document.querySelector('#search');
-    const searchResults = document.querySelector('.search-container__results');
-    searchInput.addEventListener('focusin', () => {
-        searchResults.classList.add('show');
-    });
-
-    searchInput.addEventListener('focusout', () => {
-        searchResults.classList.remove('show');
+        container.classList.remove(toggleClass);
+        closeBtn.classList.remove('show');
     });
 }

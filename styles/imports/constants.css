@@ -6,7 +6,14 @@ body {
     background-color: var(--clr-bg);
 }
 
-h1, h2, h3, a, button, .title, .blog-card, .categories__cards_card, .loading-container, .latest-posts__amount, #search  { 
+h1, h2, h3, a, button, 
+.title, 
+.blog-card, 
+.categories__cards_card, 
+.loading-container, 
+.latest-posts__amount, 
+.search-container__results,
+#search  { 
     font-family: var(--ff-headers); 
     color: var(--clr-pri);
 }
@@ -23,6 +30,7 @@ h3 { font-size: var(--s-150); }
 .tc-white { color: var(--clr-white); }
 .tc-pri70 { color: var(--clr-pri70); }
 
+.tc-error { color: var(--clr-error); }
 /* font sizes */
 .fs-xs { font-size: var(--s-50); }
 .fs-s { font-size: var(--s-75); }

@@ -20,6 +20,8 @@
     --clr-white40: #FFFFFF40;
     --clr-black40: #00000040;
 
+    --clr-error: #DB222A;
+
     /* typography */
     --ff-body: 'Lora', serif;
     --ff-headers: 'Nunito', sans-serif;
