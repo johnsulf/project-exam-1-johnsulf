@@ -27,8 +27,8 @@ function buildHeader() {
                     <i class="fa-solid fa-close tc-white"></i>
                 </button>
                 <div class="search-container__input-results">
-                    <input type="search" name="search" id="search" placeholder="Search for blog titles">
-                    <div class="search-container__results | p-2"></div>
+                    <input type="search" name="search" id="search" placeholder="Search for blogs">
+                    <div class="search-container__results | p-1"></div>
                 </div>    
             </div>
             <button class="search-open" type="button" title="Open Search View">

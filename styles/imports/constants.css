@@ -32,6 +32,7 @@ h3 { font-size: var(--s-150); }
 
 .tc-error { color: var(--clr-error); }
 /* font sizes */
+.fs-xxs { font-size: var(--s-25); }
 .fs-xs { font-size: var(--s-50); }
 .fs-s { font-size: var(--s-75); }
 .fs-m { font-size: var(--s-100); }

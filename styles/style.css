@@ -19,7 +19,9 @@
 .categories__cards_card:hover, 
 .latest-posts__posts .blog-card:hover, 
 .cta:hover,
-.fa-solid:hover  {
+.fa-solid:hover,
+.search-container__results_result:hover
+  {
     cursor: pointer;
     filter: brightness(var(--b-hover));
 }

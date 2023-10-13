@@ -38,13 +38,13 @@ async function populatePosts() {
     toggleCircleLoader(true, latestPostsLoader);
     const posts = await fetchData(baseUrl + postsEmbedUrl, latestPostsContainer);
     if (posts) {
-        let latestPostsHtml = ''; 
-        let recentBlogHtml = '';  
+        let latestPostsHtml = '';
+        let recentBlogHtml = '';
 
         posts.forEach((p, i) => {
             if (i === 0) {
-                recentBlogHtml = populateBlogCard(p, 'recent'); 
-            } else { 
+                recentBlogHtml = populateBlogCard(p, 'recent');
+            } else {
                 latestPostsHtml += populateBlogCard(p, 'latest');
             }
         });
