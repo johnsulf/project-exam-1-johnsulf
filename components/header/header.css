@@ -52,7 +52,7 @@ header {
     height: var(--s-250);
     border-radius: var(--r-3);
     background-color: var(--clr-bg);
-    z-index: 1;
+    z-index: 2;
 }
 
 #search:focus {
@@ -64,11 +64,11 @@ header {
     flex-direction: column;
     gap: var(--s-50);
     position: absolute;
-    top: var(--s-200);
+    top: var(--s-250);
     width: 78%;
     background-color: var(--clr-pri);
     border-radius: var(--r-2);
-    z-index: 0;
+    z-index: 1;
 }
 
 .search-container__results_result {

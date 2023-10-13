@@ -6,8 +6,11 @@ export async function buildSearchResults() {
     const searchResults = document.querySelector('.search-container__results');
 
     searchInput.addEventListener('focusout', () => {
-        searchResults.classList.remove('show-flex');
+        setTimeout(() => {
+            searchResults.classList.remove('show-flex');
+        }, 100);
     });
+
 
     searchInput.addEventListener('input', async (event) => {
         searchResults.classList.add('show-flex');
@@ -28,7 +31,7 @@ export async function buildSearchResults() {
             let resultsHTML = "";
             blogs.forEach(blog => {
                 const blogPost = BlogPost.fromJson(blog);
-                resultsHTML += `<a href="#" class="search-container__results_result">
+                resultsHTML += `<a href="/pages/blog.html?id=${blogPost.id}" class="search-container__results_result">
                                     <img class="search-container__results_result__img" src="${blogPost.featuredImage}" alt="" srcset="">
                                     <div class="search-container__results_result__content | fs-xs">
                                         <p class="fw-700">${blogPost.title}</p>
