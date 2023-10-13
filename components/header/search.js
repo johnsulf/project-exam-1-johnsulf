@@ -28,7 +28,6 @@ export async function buildSearchResults() {
             let resultsHTML = "";
             blogs.forEach(blog => {
                 const blogPost = BlogPost.fromJson(blog);
-                console.log(blog);
                 resultsHTML += `<a href="#" class="search-container__results_result">
                                     <img class="search-container__results_result__img" src="${blogPost.featuredImage}" alt="" srcset="">
                                     <div class="search-container__results_result__content | fs-xs">

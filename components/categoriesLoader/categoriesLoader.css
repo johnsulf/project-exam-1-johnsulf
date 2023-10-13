@@ -7,7 +7,7 @@
 .line {
     height: var(--s-50);
     width: 80%;
-    background-color: var(--clr-pri);
+    background-color: var(--clr-pri20);
 }
 
 .load-overlay {

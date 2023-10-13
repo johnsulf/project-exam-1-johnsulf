@@ -72,7 +72,7 @@ main {
 
 .blog-card__img {
     width: 100%;
-    flex: 2;
+    aspect-ratio: 4/3;
     object-fit: cover;
     background-color: var(--clr-white);
     border-radius: var(--r-22-00);
@@ -86,7 +86,6 @@ main {
 .blog-card__content {
     position: relative;
     justify-content: space-between;
-    flex: 4;
 
     gap: var(--s-50);
     border-radius: var(--r-00-22);

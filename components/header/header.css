@@ -49,8 +49,8 @@ header {
     border: none;
     width: 80%;
     text-indent: var(--s-100);
-    height: var(--s-200);
-    border-radius: var(--r-2);
+    height: var(--s-250);
+    border-radius: var(--r-3);
     background-color: var(--clr-bg);
     z-index: 1;
 }
