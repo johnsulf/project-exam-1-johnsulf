@@ -18,9 +18,11 @@ h1, h2, h3, a, button,
     color: var(--clr-pri);
 }
 
-h1 { font-size: var(--s-250); }
-h2 { font-size: var(--s-200); }
-h3 { font-size: var(--s-150); }
+h1 { font-size: var(--s-200); }
+h2 { font-size: var(--s-150); }
+h3 { font-size: var(--s-100); }
+p,
+li { font-size: var(--s-75); }
 
 /* text colors */
 .tc-pri { color: var(--clr-pri); }
@@ -120,4 +122,31 @@ h3 { font-size: var(--s-150); }
 /* box-shadows */
 .bs-1 {
     box-shadow: var(--bs-1);
+}
+
+@media screen and (min-width: 700px) {
+    
+    h1 { font-size: var(--s-250); }
+    h2 { font-size: var(--s-200); }
+    h3 { font-size: var(--s-150); }
+
+    /* text colors */
+    .tc-pri { color: var(--clr-pri); }
+    .tc-sec { color: var(--clr-sec); }
+    .tc-acc { color: var(--clr-acc); }
+
+    .tc-white { color: var(--clr-white); }
+    .tc-pri70 { color: var(--clr-pri70); }
+
+    .tc-error { color: var(--clr-error); }
+    /* font sizes */
+    .fs-xxs { font-size: var(--s-25); }
+    .fs-xs { font-size: var(--s-50); }
+    .fs-s { font-size: var(--s-75); }
+    .fs-m { font-size: var(--s-100); }
+    .fs-l { font-size: var(--s-150); }
+    .fs-xl { font-size: var(--s-200); }
+    .fs-xxl { font-size: var(--s-300); }
+    .fs-xxxl { font-size: var(--s-400); }
+        
 }

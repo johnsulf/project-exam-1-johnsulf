@@ -5,14 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[BlogTitle]</title>
+
+    <script src="https://kit.fontawesome.com/88c643a80f.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="/assets/icons/logo.png">
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 
 <body>
-    <div class="blog">
-        <div id="blogLoader" class="loading-container"></div>
-    </div>
+    <header id="header"></header>
+    <main>
+        <section class="blog">
+            <div id="blogLoader" class="loading-container"></div>
+        </section>
+    </main>
+    <footer id="footer"></footer>
 </body>
+
+<script type="module" src="/components/header/header.js"></script>
+<script type="module" src="/components/footer/footer.js"></script>
 <script type="module" src="/js/blog.js"></script>
 
 </html>
+
+<!-- <section>
+    <article class="blog__content">
+        <section class="blog__content__top-row">
+            <div class="blog__content__top-row__category">
+                <p class="tt-up fs-xs">${blogPost.category}</p>
+            </div>
+            <button class="blog-close" onclick="history.back()" type="button" title="Close Blog">
+                <i class="fa-solid fa-close tc-primary"></i>
+            </button>
+        </section>
+        <section class="blog__content__content">
+            <h1>${blogPost.title}</h1>
+            <p class="fw-700 tc-pri">${blogPost.author} - ${blogPost.date}</p>
+            <figure class="my-2">
+                <img src="${blogPost.featuredImage}" alt="${blogPost.featuredImageAlt}" srcset="">
+                <figcaption>${blogPost.featuredImageCaption}</figcaption>
+            </figure>
+            <div>${blogPost.content}</div>
+        </section>
+    </article>
+    <section class="blog__conversation">
+        <h2>Conversation</h2>
+        <p>Please keep comments respectful and constructive. Let's make this a positive space for everyone!</p>
+        <h3>Comment</h3>
+        <input type="text">
+        <button class="cta">submit</button>
+        <section class="blog__conversation__comments">
+
+        </section>
+    </section>
+</section> -->

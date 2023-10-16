@@ -19,7 +19,7 @@ function buildHeader() {
             <button class="menu-open" type="button" title="Open Navigation Menu">
                 <i class="fa-solid fa-bars tc-pri"></i>
             </button>
-            <a href="#" class="title">
+            <a href="/index.html" class="title">
                 <span class="fw-600">putting</span><span class="fw-900">LAB</span>
             </a>
             <div class="search-container">

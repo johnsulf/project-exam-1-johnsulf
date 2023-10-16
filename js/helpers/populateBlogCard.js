@@ -2,7 +2,7 @@ import { BlogPost } from "../models/blogPost.js";
 
 export function populateBlogCard(post, type = 'latest') {
     const blogPost = BlogPost.fromJson(post);
-    let rootElementStart = '<a href="#"';
+    let rootElementStart = `<a href="/pages/blog.html?id=${blogPost.id}"`;
     let rootElementEnd = '</a>';
     let classList = 'blog-card | bs-1 bg-sec40';
     let contentPadding = 'py-2 px-1';
@@ -17,7 +17,7 @@ export function populateBlogCard(post, type = 'latest') {
         contentPadding = 'py-3 px-1';
         titleSize = 'fs-m';
         authorSize = 'fs-s';
-        readButton = '<button class="cta">read</button>';
+        readButton = `<a href="/pages/blog.html?id=${blogPost.id}" class="cta">read</a>`;
     }
 
     return `${rootElementStart} class="${classList}">
