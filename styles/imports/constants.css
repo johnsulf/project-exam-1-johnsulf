@@ -13,7 +13,9 @@ h1, h2, h3, a, button,
 .loading-container, 
 .latest-posts__amount, 
 .search-container__results,
-#search  { 
+#search,
+.blog__conversation__form input,
+.blog__conversation__form textarea { 
     font-family: var(--ff-headers); 
     color: var(--clr-pri);
 }
@@ -21,6 +23,7 @@ h1, h2, h3, a, button,
 h1 { font-size: var(--s-200); }
 h2 { font-size: var(--s-150); }
 h3 { font-size: var(--s-100); }
+
 p,
 li { font-size: var(--s-75); }
 
@@ -33,6 +36,8 @@ li { font-size: var(--s-75); }
 .tc-pri70 { color: var(--clr-pri70); }
 
 .tc-error { color: var(--clr-error); }
+.tc-success { color: var(--clr-success); }
+
 /* font sizes */
 .fs-xxs { font-size: var(--s-25); }
 .fs-xs { font-size: var(--s-50); }
@@ -68,6 +73,11 @@ li { font-size: var(--s-75); }
 .bg-pri20 { background-color: var(--clr-sec40); }
 .bg-sec40 { background-color: var(--clr-sec40); }
 .bg-acc40 { background-color: var(--clr-acc40); }
+
+.bg-error { background-color: var(--clr-error); }
+.bg-error20 { background-color: var(--clr-error20); }
+.bg-success { background-color: var(--clr-success); }
+.bg-success20 { background-color: var(--clr-success20); }
 
 /* margin */
 .m-1 { margin: var(--s-75); }
@@ -112,6 +122,7 @@ li { font-size: var(--s-75); }
 .w-25 { width: 25%; }
 
 /* heights */
+.h-full { height: 100vh; }
 
 /* rem */
 .h-15 { height: 15rem; }
@@ -124,29 +135,11 @@ li { font-size: var(--s-75); }
     box-shadow: var(--bs-1);
 }
 
-@media screen and (min-width: 700px) {
-    
-    h1 { font-size: var(--s-250); }
-    h2 { font-size: var(--s-200); }
-    h3 { font-size: var(--s-150); }
-
-    /* text colors */
-    .tc-pri { color: var(--clr-pri); }
-    .tc-sec { color: var(--clr-sec); }
-    .tc-acc { color: var(--clr-acc); }
-
-    .tc-white { color: var(--clr-white); }
-    .tc-pri70 { color: var(--clr-pri70); }
-
-    .tc-error { color: var(--clr-error); }
-    /* font sizes */
-    .fs-xxs { font-size: var(--s-25); }
-    .fs-xs { font-size: var(--s-50); }
-    .fs-s { font-size: var(--s-75); }
-    .fs-m { font-size: var(--s-100); }
-    .fs-l { font-size: var(--s-150); }
-    .fs-xl { font-size: var(--s-200); }
-    .fs-xxl { font-size: var(--s-300); }
-    .fs-xxxl { font-size: var(--s-400); }
-        
+/* borders */
+.border-error {
+    border-left: var(--clr-error) 8px solid;
 }
+.border-success {
+    border-left: var(--clr-success) 8px solid;
+}
+

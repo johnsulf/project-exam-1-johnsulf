@@ -11,7 +11,8 @@
   }
 
 .welcome,
-.blog-card__content {
+.blog-card__content,
+.blog__conversation__form {
     display: flex;
     flex-direction: column;
 }
@@ -92,7 +93,7 @@ main {
 }
 
 .blog-card__content_category,
-.blog__content__top-row__category {
+.blog__article__top-row__category {
     max-width: 75%;
     color: var(--clr-acc);
     background-color: var(--clr-pri);
@@ -189,23 +190,23 @@ main {
 
     margin: var(--s-50);
     padding: var(--s-50);
-    border-radius: var(--r-1);
 }
 
-.blog__content {
+.blog__article {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    gap: var(--s-300);
     background-color: var(--clr-white);
-
+    border-radius: var(--r-1);
+    padding: var(--s-200);
 }
 
-.blog__content__top-row {
+.blog__article__top-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--s-100);
     width: 100%;
  }
 
@@ -215,28 +216,79 @@ main {
     border: 1px solid var(--clr-pri);
  }
 
- .blog__content__content {
+ .blog__article__content,
+ .blog__conversation__content {
+    width: 100%;
     max-width: 600px;
  }
 
- .blog__content__content h3 {
+ .blog__article__content h3 {
     margin-top: var(--s-100);
  }
-
- .blog__content__content ul {
+ 
+ .blog__article__content ul {
     margin-left: var(--s-300);
  }
 
- .blog__content img {
+ .blog__article img {
     width: 100%;
     aspect-ratio: 1.5/1;
     object-fit: cover;
  }
 
- .blog__content__ingress {
+ .blog__article__ingress {
     font-style: italic;
     font-size: var(--s-100);
- } 
+ }
+
+.blog__conversation {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    gap: var(--s-50);
+ }
+
+ .blog__conversation__form {
+    gap: var(--s-50);
+ }
+
+ .blog__conversation__form input,
+ .blog__conversation__form textarea {
+    border: none;
+    font-weight: 400;
+
+    font-size: var(--s-100);
+    border-radius: var(--r-2);
+    text-indent: var(--s-100);
+ }
+
+
+ .blog__conversation__form input {
+    height: var(--s-250);
+ }
+
+ .blog__conversation__comments__comment {
+    background-color: var(--clr-white);
+    padding: var(--s-100);
+    border-radius: var(--r-1);
+    margin-bottom: var(--s-100);
+ }
+
+ .blog__conversation__response {
+    margin-block: var(--s-50);
+    padding: var(--s-50);
+    border-radius: var(--r-1);
+ }
+
+ .blog__conversation__response.hidden {
+    display: none;
+ }
+
+ .blog__conversation__response.show {
+    display: block;
+ }
+
 @media screen and (min-width: 700px) {
 
     .welcome {

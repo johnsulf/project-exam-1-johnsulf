@@ -1,59 +1,145 @@
 import { toggleCircleLoader } from "../components/circleLoader/circleLoader.js";
 import { BlogPost } from "./models/blogPost.js";
 
-const blogContainer = document.querySelector(".blog");
+const baseUrl = "https://wp.erlendjohnsen.com/wp-json/wp/v2";
+
+
 const blogLoader = document.querySelector("#blogLoader");
+
+const blogCategory = document.querySelector(".blog-category");
+const blogHeader = document.querySelector(".blog-header");
+const blogAuthorDate = document.querySelector(".blog-author-date");
+const blogImage = document.querySelector(".blog-image");
+const blogContent = document.querySelector(".blog-content");
 
 let blog;
 
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
+    fetchBlogData();
+    fetchAndDisplayComments();
+});
+
+async function fetchBlogData() {
 
     const id = new URLSearchParams(window.location.search).get('id');
 
     toggleCircleLoader(true, blogLoader)
 
     try {
-        const response = await fetch(`https://wp.erlendjohnsen.com/wp-json/wp/v2/posts/${id}?_embed`);
+        const response = await fetch(`${baseUrl}/posts/${id}?_embed`);
         blog = await response.json();
         const blogPost = BlogPost.fromJson(blog);
+
         console.log("Blog: ", blog);
-        toggleCircleLoader(false, blogLoader)
-        blogContainer.innerHTML = `<section>
-                                        <article class="blog__content">
-                                            <section class="blog__content__top-row">
-                                                <div class="blog__content__top-row__category">
-                                                    <p class="tt-up fs-xs">${blogPost.category}</p>
-                                                </div>
-                                                <button class="blog-close" onclick="history.back()" type="button" title="Close Blog">
-                                                    <i class="fa-solid fa-close tc-primary"></i>
-                                                </button>
-                                            </section>
-                                            <section class="blog__content__content">
-                                                <h1>${blogPost.title}</h1>
-                                                <p class="fw-700 tc-pri">${blogPost.author} - ${blogPost.date}</p>
-                                                <figure class="my-2">
-                                                    <img src="${blogPost.featuredImage}" alt="${blogPost.featuredImageAlt}" srcset="">
-                                                    <figcaption>${blogPost.featuredImageCaption}</figcaption>
-                                                </figure>
-                                                <div>${blogPost.content}</div>
-                                            </section>
-                                        </article>
-                                        <section class="blog__conversation">
-                                            <h2>Conversation</h2>
-                                            <p>Please keep comments respectful and constructive. Let's make this a positive space for everyone!</p>
-                                            <h3>Comment</h3>
-                                            <form>
-                                                <input type="text" id="c-name">
-                                                <input type="text" id="comment">
-                                                <button class="cta">submit</button>
-                                            </form>
-                                            <section class="blog__conversation__comments">
-                                    
-                                            </section>
-                                        </section>
-                                    </section>`;
+
+        blogCategory.innerHTML = `${blogPost.category}`;
+        blogHeader.innerHTML = `${blogPost.title}`;
+        blogAuthorDate.innerHTML = `${blogPost.author} - ${blogPost.date}`;
+        blogContent.innerHTML = `${blogPost.content}`;
+        blogImage.innerHTML = `<img 
+                                    src="${blogPost.featuredImage}" 
+                                    alt="${blogPost.featuredImageAlt}"
+                                    srcset="">
+                                <figcaption>${blogPost.featuredImageCaption}</figcaption>`;
+
+
+        toggleCircleLoader(false, blogLoader);
+
     } catch (error) {
-        toggleCircleLoader(false, blogLoader)
+        toggleCircleLoader(false, blogLoader);
         console.log("Error fetching blog:", error);
     }
+}
+
+async function fetchAndDisplayComments() {
+    const postId = new URLSearchParams(window.location.search).get('id');
+    const commentsSection = document.querySelector('.blog__conversation__comments');
+
+    try {
+        const response = await fetch(`${baseUrl}/comments?post=${postId}`);
+        if (response.ok) {
+            const comments = await response.json();
+            let commentsHTML = '<h3>Comments</h3>';
+
+            for (const comment of comments) {
+                commentsHTML += `
+                    <div class="blog__conversation__comments__comment">
+                        <h4>${comment.author_name}</h4>
+                        <p>${comment.date}</p>
+                        <p>${comment.content.rendered}</p>
+                    </div>
+                `;
+            }
+
+            commentsSection.innerHTML = commentsHTML;
+        }
+    } catch (error) {
+        console.error("Failed to fetch comments:", error);
+    }
+}
+
+const form = document.querySelector(".blog__conversation__form");
+
+form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const postId = new URLSearchParams(window.location.search).get('id');
+    const name = document.querySelector("#cName");
+    const email = document.querySelector("#cEmail");
+    const comment = document.querySelector("#cComment");
+    const submitButton = document.querySelector(".cta");
+
+    const responseContainer = document.querySelector(".blog__conversation__response");
+
+    const payload = JSON.stringify({
+        post: postId,
+        author_name: name.value,
+        author_email: email.value,
+        content: comment.value,
+    });
+
+    submitButton.disabled = true;
+
+    try {
+        const response = await fetch(`${baseUrl}/comments`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: payload,
+        });
+
+        if (response.ok) {
+            fetchAndDisplayComments();
+            name.value = '';
+            email.value = '';
+            comment.value = '';
+
+            submitButton.disabled = false;
+
+            responseContainer.innerHTML = `<h3>Success</h3>
+                                            <p>Your comment was successfully posted!</p>
+                                            <p>Thank you for joining the conversation!</p>`;
+            responseContainer.classList.add("border-success", "bg-success20", "show");
+
+            setTimeout(() => {
+                responseContainer.classList.remove("border-success", "bg-success20", "show");
+            }, 6000);
+
+            console.log("Comment submitted");
+        } else {
+            responseContainer.innerHTML = `<h3>Error</h3>
+                                            <p>Oh no! An error has occurred!</p>
+                                            <p>Please try again.</p>`;
+            responseContainer.classList.add("border-error", "bg-error20", "show");
+
+            setTimeout(() => {
+                responseContainer.classList.remove("border-error", "bg-error20", "show");
+            }, 6000);
+            const errorData = await response.json();
+            console.log("Error:", errorData.message);
+        }
+    } catch (error) {
+        submitButton.disabled = false;
+        console.error("Fetch error:", error);
+    }
 });
+

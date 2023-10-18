@@ -15,7 +15,47 @@
     <header id="header"></header>
     <main>
         <section class="blog">
-            <div id="blogLoader" class="loading-container"></div>
+            <div id="blogLoader" class="loading-container h-full w-full"></div>
+            <article class="blog__article">
+                <section class="blog__article__top-row">
+                    <div class="blog__article__top-row__category">
+                        <p class="blog-category tt-up fs-xs"></p>
+                    </div>
+                    <button class="blog-close" onclick="history.back()" type="button" title="Close Blog">
+                        <i class="fa-solid fa-close tc-primary"></i>
+                    </button>
+                </section>
+                <section class="blog__article__content">
+                    <h1 class="blog-header"></h1>
+                    <p class="blog-author-date fw-700 tc-pri"></p>
+                    <figure class="blog-image my-2">
+
+                    </figure>
+                    <div class="blog-content"></div>
+                </section>
+            </article>
+            <section class="blog__conversation">
+                <h2>Conversation</h2>
+                <section>
+                    <h3>Write a Comment</h3>
+                    <p>Please keep comments respectful and constructive.<br>Let's make this a positive space for
+                        everyone!</p>
+                    <div class="blog__conversation__response hidden">
+
+                    </div>
+                    <form class="blog__conversation__form">
+                        <input type="hidden" id="cId" />
+                        <label for="cName">Name*</label>
+                        <input type="text" id="cName" placeholder="Write Your Name Here" required>
+                        <label for="cEmail">Email*</label>
+                        <input type="email" id="cEmail" placeholder="Write Your Email Here" required>
+                        <label for="cComment">Comment*</label>
+                        <textarea rows="6" id="cComment" placeholder="Write Your Comment Here" required></textarea>
+                        <button type="submit" class="cta">submit</button>
+                    </form>
+                </section>
+                <section class="blog__conversation__comments"></section>
+            </section>
         </section>
     </main>
     <footer id="footer"></footer>
@@ -26,35 +66,3 @@
 <script type="module" src="/js/blog.js"></script>
 
 </html>
-
-<!-- <section>
-    <article class="blog__content">
-        <section class="blog__content__top-row">
-            <div class="blog__content__top-row__category">
-                <p class="tt-up fs-xs">${blogPost.category}</p>
-            </div>
-            <button class="blog-close" onclick="history.back()" type="button" title="Close Blog">
-                <i class="fa-solid fa-close tc-primary"></i>
-            </button>
-        </section>
-        <section class="blog__content__content">
-            <h1>${blogPost.title}</h1>
-            <p class="fw-700 tc-pri">${blogPost.author} - ${blogPost.date}</p>
-            <figure class="my-2">
-                <img src="${blogPost.featuredImage}" alt="${blogPost.featuredImageAlt}" srcset="">
-                <figcaption>${blogPost.featuredImageCaption}</figcaption>
-            </figure>
-            <div>${blogPost.content}</div>
-        </section>
-    </article>
-    <section class="blog__conversation">
-        <h2>Conversation</h2>
-        <p>Please keep comments respectful and constructive. Let's make this a positive space for everyone!</p>
-        <h3>Comment</h3>
-        <input type="text">
-        <button class="cta">submit</button>
-        <section class="blog__conversation__comments">
-
-        </section>
-    </section>
-</section> -->
