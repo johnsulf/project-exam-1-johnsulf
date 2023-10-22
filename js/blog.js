@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function fetchBlogData() {
 
+    let description = document.head.children[3].content;
     const id = new URLSearchParams(window.location.search).get('id');
 
     toggleCircleLoader(true, blogLoader)
@@ -32,6 +33,8 @@ async function fetchBlogData() {
 
         console.log("Blog: ", blog);
 
+        document.title += ` ${blogPost.title}`;
+        description = blogPost.excerpt;
         blogCategory.innerHTML = `${blogPost.category}`;
         blogHeader.innerHTML = `${blogPost.title}`;
         blogAuthorDate.innerHTML = `${blogPost.author} - ${blogPost.date}`;
@@ -42,6 +45,7 @@ async function fetchBlogData() {
                                     srcset="">
                                 <figcaption>${blogPost.featuredImageCaption}</figcaption>`;
 
+        console.log(description);
 
         toggleCircleLoader(false, blogLoader);
 

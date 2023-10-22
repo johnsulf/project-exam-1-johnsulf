@@ -85,8 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderCategoryCard(c) {
+        console.log(c);
         return `
-        <a href="#" class="categories__cards_card">
+        <a href="/pages/blogs.html?category=${c.id}" class="categories__cards_card">
             <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">
             <p class="categories__cards_card__title | fs-s fw-700 mx-1">${c.name}</p>
         </a>`;
