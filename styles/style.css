@@ -21,8 +21,8 @@
 .latest-posts__posts .blog-card:hover, 
 .cta:hover,
 .fa-solid:hover,
-.search-container__results_result:hover
-  {
+.search-container__results_result:hover,
+.blogs__cards__card:hover {
     cursor: pointer;
     filter: brightness(var(--b-hover));
 }
@@ -186,6 +186,10 @@ main {
     background-color: var(--clr-pri);
 }
 
+.blogs {
+    min-height: 100vh;
+}
+
 .blogs__tab-bar {
     background-color: var(--clr-white);
     display: flex;
@@ -230,6 +234,27 @@ main {
     padding: var(--s-100);
     margin: var(--s-100);
     border-radius: var(--r-2);
+    box-shadow: var(--bs-1);
+}
+
+.card-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--s-150);
+}
+
+.card-flex > * {
+    flex: 1;
+}
+
+.middle {
+    display: none;
+}
+
+.right img {
+    width: 90%;
+    aspect-ratio: 2/1.5;
+    object-fit: cover;
 }
 
 .blog {
@@ -388,5 +413,9 @@ main {
 
     .blogs__header {
         width: 50%;
+    }
+
+    .middle {
+        display: block;
     }
 }

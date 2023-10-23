@@ -26,13 +26,21 @@ async function setCards() {
             const blogPost = BlogPost.fromJson(post);
             const blogCardHtml = `
             <div class="blogs__cards__card">
-                <a href="/pages/blog.html?id=${blogPost.id}">
-                    <div class="blogs__cards__card-category w-25">
-                        <p class="tt-up fs-xs">${blogPost.category}</p>
-                    </div>
-                    <h2 class="fs-m w-half">${blogPost.title}</h2>
-                    <p class="fw-700">${blogPost.author}</p>
-                    <p>${blogPost.date}</p>
+                <a class="card-flex" href="/pages/blog.html?id=${blogPost.id}">
+                    <section class="left">
+                        <div class="blogs__cards__card-category">
+                            <p class="tt-up fs-xs">${blogPost.category}</p>
+                        </div>
+                        <h2 class="fs-m">${blogPost.title}</h2>
+                        <p class="fw-700">${blogPost.author}</p>
+                        <p>${blogPost.date}</p>
+                    </section>
+                    <section class="middle">
+                        <p>${blogPost.excerpt}</p>
+                    </section>
+                    <section class="right">
+                        <img src="${blogPost.featuredImage}" alt="${blogPost.featuredImageAlt}" />
+                    </section>
                 </a>
             </div>`;
             blogsCardsContainer.innerHTML += blogCardHtml;
