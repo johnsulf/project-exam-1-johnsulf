@@ -1,7 +1,6 @@
 @import url(imports/constants.css);
 @import url(imports/variables.css);
-@import url(/components/circleLoader/circleLoader.css);
-@import url(/components/categoriesLoader/categoriesLoader.css);
+@import url(imports/loader.css);
 @import url(/components/header/header.css);
 @import url(/components/footer/footer.css);
 * {
@@ -247,6 +246,12 @@ main {
     flex: 1;
 }
 
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .middle {
     display: none;
 }
@@ -266,6 +271,7 @@ main {
 }
 
 .blog__article {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;

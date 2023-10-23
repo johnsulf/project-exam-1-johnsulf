@@ -1,5 +1,4 @@
-import { buildCategoriesLoader } from "../components/categoriesLoader/categoriesLoader.js";
-import { toggleCircleLoader } from "../components/circleLoader/circleLoader.js";
+import { buildCategoriesLoader, buildRecentBlogLoader, buildLatestPostsLoader } from "../components/loaders/loaders.js";
 import { populateBlogCard } from "./helpers/populateBlogCard.js";
 
 export async function fetchData(url, container) {
@@ -23,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const recentBlogContainer = document.querySelector(".recent-blog");
     const latestPostsContainer = document.querySelector(".latest-posts__posts");
-    const latestPostsLoader = document.querySelector("#latestPostsLoader");
     const categoriesContainer = document.querySelector(".categories__cards");
 
     let categoriesHtml = "";
@@ -37,12 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function populatePosts() {
-        toggleCircleLoader(true, latestPostsLoader);
+        recentBlogContainer.innerHTML = buildRecentBlogLoader();
+        latestPostsContainer.innerHTML = buildLatestPostsLoader();
         const posts = await fetchData(`${baseUrl}${postsEmbedUrl}`, latestPostsContainer);
         if (posts) {
             initializePosts(posts);
             checkWindowSize();
-            toggleCircleLoader(false, latestPostsLoader);
         }
     }
 
@@ -85,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderCategoryCard(c) {
-        console.log(c);
         return `
         <a href="/pages/blogs.html?category=${c.id}" class="categories__cards_card">
             <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">

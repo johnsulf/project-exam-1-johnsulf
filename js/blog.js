@@ -1,10 +1,8 @@
-import { toggleCircleLoader } from "../components/circleLoader/circleLoader.js";
 import { BlogPost } from "./models/blogPost.js";
+import { buildBlogLoader } from "../components/loaders/loaders.js";
+import { formattedDate } from "./helpers/timeFormatter.js";
 
 const baseUrl = "https://wp.erlendjohnsen.com/wp-json/wp/v2";
-
-
-const blogLoader = document.querySelector("#blogLoader");
 
 const blogCategory = document.querySelector(".blog-category");
 const blogHeader = document.querySelector(".blog-header");
@@ -20,11 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function fetchBlogData() {
+  buildBlogLoader(blogCategory, blogHeader, blogAuthorDate, blogImage, blogContent);
 
     let description = document.head.children[3].content;
     const id = new URLSearchParams(window.location.search).get('id');
-
-    toggleCircleLoader(true, blogLoader)
 
     try {
         const response = await fetch(`${baseUrl}/posts/${id}?_embed`);
@@ -43,14 +40,9 @@ async function fetchBlogData() {
                                     src="${blogPost.featuredImage}" 
                                     alt="${blogPost.featuredImageAlt}"
                                     srcset="">
-                                <figcaption>${blogPost.featuredImageCaption}</figcaption>`;
-
-        console.log(description);
-
-        toggleCircleLoader(false, blogLoader);
+                                <figcaption>${blogPost.featuredImageCaption}</figcaption>`; 
 
     } catch (error) {
-        toggleCircleLoader(false, blogLoader);
         console.log("Error fetching blog:", error);
     }
 }
@@ -69,7 +61,7 @@ async function fetchAndDisplayComments() {
                 commentsHTML += `
                     <div class="blog__conversation__comments__comment">
                         <h4>${comment.author_name}</h4>
-                        <p>${comment.date}</p>
+                        <time class="fs-xs">${formattedDate(comment.date)}</time>
                         <p>${comment.content.rendered}</p>
                     </div>
                 `;

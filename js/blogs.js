@@ -1,6 +1,7 @@
 
 import { fetchData } from "./index.js";
 import { BlogPost } from "./models/blogPost.js";
+import { buildBlogsLoader } from "../components/loaders/loaders.js";
 
 const headerH1 = document.querySelector(".blogs__header-h1");
 const headerParagraph = document.querySelector(".blogs__header-p");
@@ -17,10 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function setCards() {
-    blogsCardsContainer.innerHTML = '';
+    blogsCardsContainer.innerHTML = buildBlogsLoader();
     const posts = await fetchData(baseUrl + "posts?_embed", headerParagraph);
-    console.log(posts);
-
+    blogsCardsContainer.innerHTML = "";
     posts.forEach(post => {
         if (categoryId === '0' || post.categories[0].toString() === categoryId) {
             const blogPost = BlogPost.fromJson(post);
@@ -28,12 +28,16 @@ async function setCards() {
             <div class="blogs__cards__card">
                 <a class="card-flex" href="/pages/blog.html?id=${blogPost.id}">
                     <section class="left">
-                        <div class="blogs__cards__card-category">
-                            <p class="tt-up fs-xs">${blogPost.category}</p>
+                        <div>
+                            <div class="blogs__cards__card-category mb-1">
+                                <p class="tt-up fs-xs">${blogPost.category}</p>
+                            </div>
+                            <h2 class="fs-m">${blogPost.title}</h2>
                         </div>
-                        <h2 class="fs-m">${blogPost.title}</h2>
-                        <p class="fw-700">${blogPost.author}</p>
-                        <p>${blogPost.date}</p>
+                        <div>
+                            <p class="fw-700">${blogPost.author}</p>
+                            <p>${blogPost.date}</p>
+                        </div>
                     </section>
                     <section class="middle">
                         <p>${blogPost.excerpt}</p>
@@ -55,17 +59,16 @@ async function initTabsAndHeader() {
     const categories = await fetchData(baseUrl + "categories/", headerParagraph);
 
     const updateH1 = (index) => {
-        const { name, description } = categories[index];
-        headerH1.innerText = name;
+        const { description } = categories[index];
+        headerH1.innerText = tabs[index+1].innerText;
         headerParagraph.innerText = description;
     };
 
     tabs.forEach((tab, i) => {
-        if (i === 0) {
-            tab.innerText = headerH1.innerText = 'All Blogs';
-        } else {
-            tab.innerText = categories[i - 1].name;
+        if (i != 0) {
             if (i === activeTab) updateH1(i - 1);
+        } else {
+            headerH1.innerText = 'All Blogs';
         }
 
         tab.addEventListener('click', () => {
