@@ -42,9 +42,20 @@ function buildHeader() {
                     <li><a href="/index.html">home</a></li>
                     <li><a href="/pages/blogs.html">blogs</a></li>
                     <li><a href="/pages/contact.html">contact</a></li>
+                    <li><a href="/pages/about.html">about</a></li>
                 </ul>
             </nav>
         </section>`;
+
+        const currentPage = window.location.pathname;
+
+        const navLinks = header.querySelectorAll('.nav ul li a');
+
+        navLinks.forEach((link) => {
+            if (link.getAttribute('href') === currentPage) {
+            link.parentElement.classList.add('active');
+            }
+        });
 }
 
 function toggleMobileFeature(openBtnSelector, closeBtnSelector, containerSelector, toggleClass) {

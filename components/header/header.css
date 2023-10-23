@@ -166,4 +166,15 @@ header {
         font-weight: 700;
         gap: var(--s-100);
     }
+
+    header nav ul li {
+        display: flex;
+        align-items: center;
+        padding: var(--s-100) var(--s-75);
+    }
+
+    header nav ul li:hover,
+    .active {
+        background-color: var(--clr-sec40);
+    }
 }
