@@ -44,6 +44,15 @@
     --s-350: 3.5rem;
     --s-400: 4rem;
 
+    --fs-100: var(--s-25);
+    --fs-200: var(--s-50);
+    --fs-300: var(--s-75);
+    --fs-400: var(--s-100);
+    --fs-500: var(--s-150);
+    --fs-600: var(--s-200);
+    --fs-700: var(--s-300);
+    --fs-800: var(--s-400);
+
     /* box shadow */
     --bs-1: 2px 2px 4px var(--clr-black40);
     --bs-2: 4px 8px 16px var(--clr-black40);
@@ -68,3 +77,16 @@
     /* brightness filter */
     --b-hover: 0.8;
 }
+
+@media screen and (min-width: 700px) {
+        :root {
+                --fs-100: var(--s-50);
+                --fs-200: var(--s-75);
+                --fs-300: var(--s-100);
+                --fs-400: var(--s-150);
+                --fs-500: var(--s-200);
+                --fs-600: var(--s-300);
+                --fs-700: var(--s-400);
+                --fs-800: var(--s-400);
+        }
+    }

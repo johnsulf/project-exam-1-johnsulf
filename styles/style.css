@@ -203,7 +203,7 @@ main {
     border: none;
     border-bottom: 1px solid var(--clr-pri);
     padding-inline: var(--s-100);
-    font-size: var(--s-75);
+    font-size: var(--fs-75);
     padding-bottom: 3px;
 }
 
@@ -313,11 +313,6 @@ main {
     width: 100%;
     aspect-ratio: 1.5/1;
     object-fit: cover;
- }
-
- .blog__article__ingress {
-    font-style: italic;
-    font-size: var(--s-100);
  }
 
 .blog__conversation {

@@ -33,7 +33,7 @@ export async function buildSearchResults() {
                     const blogPost = BlogPost.fromJson(blog);
                     resultsHTML += `<a href="/pages/blog.html?id=${blogPost.id}" class="search-container__results_result">
                                         <img class="search-container__results_result__img" src="${blogPost.featuredImage}" alt="" srcset="">
-                                        <div class="search-container__results_result__content | fs-xs">
+                                        <div class="search-container__results_result__content">
                                             <p class="fw-700">${blogPost.title}</p>
                                             <p>${blogPost.category}</p>
                                             <div class="search-container__results_result__content_bottom">

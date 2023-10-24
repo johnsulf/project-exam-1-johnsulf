@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let categoriesHtml = "";
     let currentPage = 1;
-    const postsPerPage = 4;
+    const postsPerPage = 3;
     let totalPosts = 0;
     let allPosts = [];
 

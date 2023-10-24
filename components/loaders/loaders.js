@@ -1,7 +1,7 @@
 export function buildLatestPostsLoader() {
     let latestPostsLoader = '';
     for (let i = 0; i < 4; i++) { 
-        latestPostsLoader += `<a href="/pages/blog.html?id=77" class="blog-card loading" style="border: 1px solid var(--clr-pri20);">
+        latestPostsLoader += `<a href="/pages/blog.html?id=77" class="blog-card bs-1 loading">
                                 <div class="load-overlay"></div> 
                                 <div class="blog-card__img" style="background-color: var(--clr-pri20)"></div>
                                 <div class="blog-card__content | py-2 px-1">
@@ -48,8 +48,7 @@ export function buildRecentBlogLoader() {
     return recentBlogLoader;
 }
 
-export function buildBlogLoader(cat, header, authDate, content, image) {
-    cat.innerHTML = `<p class="line"></p>`;
+export function buildBlogLoader(header, authDate, content, image) {
     header.innerHTML = `<p class="line"></p>`;
     image.innerHTML = `<div class="blog-image my-2 h-15 loading" style="background-color: var(--clr-pri20)">
                             <div class="load-overlay"></div>

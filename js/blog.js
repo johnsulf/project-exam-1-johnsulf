@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function fetchBlogData() {
-  buildBlogLoader(blogCategory, blogHeader, blogAuthorDate, blogImage, blogContent);
+  buildBlogLoader(blogHeader, blogAuthorDate, blogImage, blogContent);
 
     let description = document.head.children[3].content;
     const id = new URLSearchParams(window.location.search).get('id');
@@ -32,7 +32,7 @@ async function fetchBlogData() {
 
         document.title += ` ${blogPost.title}`;
         description = blogPost.excerpt;
-         blogCategory.innerHTML = `${blogPost.category}`;
+          blogCategory.innerHTML = `${blogPost.category}`;
         blogHeader.innerHTML = `${blogPost.title}`;
         blogAuthorDate.innerHTML = `${blogPost.author} - ${blogPost.date}`;
         blogContent.innerHTML = `${blogPost.content}`;
@@ -40,8 +40,8 @@ async function fetchBlogData() {
                                     src="${blogPost.featuredImage}" 
                                     alt="${blogPost.featuredImageAlt}"
                                     srcset="">
-                                <figcaption>${blogPost.featuredImageCaption}</figcaption>`; 
- 
+                                <figcaption class="fs-xs">${blogPost.featuredImageCaption}</figcaption>`; 
+  
     } catch (error) {
         console.log("Error fetching blog:", error);
     }

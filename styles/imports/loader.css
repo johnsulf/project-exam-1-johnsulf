@@ -14,20 +14,17 @@
 
  .load-overlay {
     position: absolute;
-    top: -8px;
-    height: 120%;
-    width: 4rem;
-    background-color: white;
-    filter: blur(5px);
+    height: 95%;
+    width: 100%;
     z-index: 2;
-    animation: floatOverlay 3s infinite linear;
+    animation: pulseOverlay 2s infinite linear alternate;
 }
 
-@keyframes floatOverlay {
-    from {
-        transform: translateX(0);
+@keyframes pulseOverlay {
+    0% {
+        background-color: #ffffffee;
     }
-    to {
-        transform: translateX(1500%);
+    100% {
+        background-color: #ffffff00;
     }
 } 
