@@ -256,7 +256,7 @@ main {
     display: none;
 }
 
-.right img {
+.right > * {
     width: 90%;
     aspect-ratio: 2/1.5;
     object-fit: cover;

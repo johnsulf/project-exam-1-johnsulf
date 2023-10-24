@@ -32,7 +32,7 @@ async function fetchBlogData() {
 
         document.title += ` ${blogPost.title}`;
         description = blogPost.excerpt;
-        blogCategory.innerHTML = `${blogPost.category}`;
+         blogCategory.innerHTML = `${blogPost.category}`;
         blogHeader.innerHTML = `${blogPost.title}`;
         blogAuthorDate.innerHTML = `${blogPost.author} - ${blogPost.date}`;
         blogContent.innerHTML = `${blogPost.content}`;
@@ -41,7 +41,7 @@ async function fetchBlogData() {
                                     alt="${blogPost.featuredImageAlt}"
                                     srcset="">
                                 <figcaption>${blogPost.featuredImageCaption}</figcaption>`; 
-
+ 
     } catch (error) {
         console.log("Error fetching blog:", error);
     }
