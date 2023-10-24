@@ -328,7 +328,9 @@ main {
  }
 
  .blog__conversation__form input,
- .blog__conversation__form textarea {
+ .blog__conversation__form textarea,
+ .contact__form__form input,
+ .contact__form__form textarea {
     border: none;
     font-weight: 400;
 
@@ -338,7 +340,8 @@ main {
  }
 
 
- .blog__conversation__form input {
+ .blog__conversation__form input,
+ .contact__form__form input {
     height: var(--s-250);
  }
 
@@ -362,6 +365,33 @@ main {
  .blog__conversation__response.show {
     display: block;
  }
+
+ .contact {
+    margin: var(--s-50);
+    padding: var(--s-50);
+ }
+ 
+ .contact__articles__article {
+    margin: var(--s-100);
+    max-width: 30rem;
+ }
+
+.contact__form__form {
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--clr-white);
+    margin: var(--s-100);
+    padding: var(--s-200);
+    border-radius: var(--r-2);
+}
+
+.contact__form__form input,
+.contact__form__form textarea {
+    background-color: var(--clr-bg);
+    padding: var(--s-100);
+    border-radius: var(--r-1);
+    margin-bottom: var(--s-100);}
 
 @media screen and (min-width: 700px) {
 

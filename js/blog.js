@@ -36,8 +36,7 @@ async function fetchBlogData() {
         blogHeader.innerHTML = `${blogPost.title}`;
         blogAuthorDate.innerHTML = `${blogPost.author} - ${blogPost.date}`;
         blogContent.innerHTML = `${blogPost.content}`;
-        blogImage.innerHTML = `<img 
-                                    src="${blogPost.featuredImage}" 
+        blogImage.innerHTML = `<img src="${blogPost.featuredImage}" 
                                     alt="${blogPost.featuredImageAlt}"
                                     srcset="">
                                 <figcaption class="fs-xs">${blogPost.featuredImageCaption}</figcaption>`; 
@@ -80,9 +79,9 @@ form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const postId = new URLSearchParams(window.location.search).get('id');
-    const name = document.querySelector("#cName");
-    const email = document.querySelector("#cEmail");
-    const comment = document.querySelector("#cComment");
+    const name = document.querySelector("#commentName");
+    const email = document.querySelector("#commentEmail");
+    const comment = document.querySelector("#commentComment");
     const submitButton = document.querySelector(".cta");
 
     const responseContainer = document.querySelector(".blog__conversation__response");

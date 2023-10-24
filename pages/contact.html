@@ -14,12 +14,46 @@
 
 <body>
     <header id="header"></header>
-    <main>
-        <h1>Contact</h1>
+    <main class="contact">
+        <h1>Contact Us</h1>
+        <section class="contact__articles">
+            <article class="contact__articles__article">
+                <h2>Tips?</h2>
+                <p>Do you have a technique, drill, or story that could benefit our puttingLAB community? We’re always on the lookout for fresh insights and valuable tips to help our readers elevate their game.</p>
+                <a href="mailto:tips@puttinglab.com">📧 tips@puttinglab.com</a>
+            </article>
+            <article class="contact__articles__article">
+                <h2>Write for Us</h2>
+                <p>Are you a putting enthusiast with a knack for words? We’re currently accepting guest posts. Share your knowledge and become a part of our growing community.</p>
+                <a href="mailto:writeforus@puttinglab.com">📧 writeforus@puttinglab.com</a>
+            </article>
+            <article class="contact__articles__article">
+                <h2>Sponsorship</h2>
+                <p>Interested in partnering with puttingLAB? We offer various sponsorship opportunities that can put your brand in the limelight.</p>
+                <a href="mailto:sponsorship@puttinglab.com">📧 sponsorship@puttinglab.com</a>
+            </article>
+        </section>
+        <section class="contact__form">
+            <h2>Other Inquiries</h2>
+            <p>Please use the form to contact us.</p>
+            <form action="" class="contact__form__form">
+                <input type="hidden" id="contactId" />
+                <label for="contactName">Name*</label>
+                <input type="text" id="contactName" placeholder="Write Your Name Here" required minlength="6">
+                <label for="contactEmail">Email*</label>
+                <input type="email" id="contactEmail" placeholder="Write Your Email Here" required>
+                <label for="contactSubject">Subject*</label>
+                <input type="text" id="contactSubject" placeholder="Write Your Subject Here" required minlength="16">
+                <label for="contactMessage">Message*</label>
+                <textarea rows="6" id="contactMessage" placeholder="Write Your Message Here" required minlength="26"></textarea>
+                <button type="submit" class="cta w-half">submit</button>
+            </form>
+        </section>
     </main>
     <footer id="footer"></footer>
 </body>
 <script type="module" src="/components/header/header.js"></script>
 <script type="module" src="/components/footer/footer.js"></script>
+<script type="module" src="/js/contact.js"></script>
 
 </html>

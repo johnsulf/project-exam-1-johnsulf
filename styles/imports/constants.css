@@ -14,8 +14,8 @@ h1, h2, h3, a, button,
 .latest-posts__amount, 
 .search-container__results,
 #search,
-.blog__conversation__form input,
-.blog__conversation__form textarea,
+ input,
+ textarea,
 .blog-category { 
     font-family: var(--ff-headers); 
     color: var(--clr-pri);
