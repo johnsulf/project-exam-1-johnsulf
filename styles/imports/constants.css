@@ -25,7 +25,7 @@ h1 { font-size: var(--fs-600); }
 h2 { font-size: var(--fs-500); }
 h3 { font-size: var(--fs-400); }
 
-li { font-size: var(--fs-300); }
+li,p { font-size: var(--fs-300); }
 
 /* font sizes */
 .fs-xxs { font-size: var(--fs-100); }
