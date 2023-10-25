@@ -21,10 +21,12 @@
     --clr-black40: #00000040;
 
     --clr-error: #DB222A;
-    --clr-error20: #db222b20;
+    --clr-errorBg: #ffd5d7;
 
     --clr-success: #22db3e;
-    --clr-success20: #22db3e20;
+    --clr-successBg: #e1ffe6;
+
+    --clr-infoBg: #d6f3ff;
 
     /* typography */
     --ff-body: 'Lora', serif;

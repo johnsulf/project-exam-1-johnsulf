@@ -1,6 +1,7 @@
 import { BlogPost } from "./models/blogPost.js";
 import { buildBlogLoader } from "../components/loaders/loaders.js";
 import { formattedDate } from "./helpers/timeFormatter.js";
+import { displaySnackbar } from "../components/snackbar/snackbar.js";
 
 const baseUrl = "https://wp.erlendjohnsen.com/wp-json/wp/v2";
 
@@ -56,6 +57,10 @@ async function fetchAndDisplayComments() {
             const comments = await response.json();
             let commentsHTML = '<h3>Comments</h3>';
 
+            if (comments.length === 0) {
+                commentsHTML += `<p>There is no comments yet. Start the conversation!</p>`;
+            } 
+
             for (const comment of comments) {
                 commentsHTML += `
                     <div class="blog__conversation__comments__comment">
@@ -82,9 +87,9 @@ form.addEventListener("submit", async (event) => {
     const name = document.querySelector("#commentName");
     const email = document.querySelector("#commentEmail");
     const comment = document.querySelector("#commentComment");
-    const submitButton = document.querySelector(".cta");
+    const submitButton = document.querySelector("#commentSubmit");
 
-    const responseContainer = document.querySelector(".blog__conversation__response");
+    const snackbar = document.querySelector("#commentsSnackbar");
 
     const payload = JSON.stringify({
         post: postId,
@@ -94,6 +99,8 @@ form.addEventListener("submit", async (event) => {
     });
 
     submitButton.disabled = true;
+    
+    displaySnackbar('waiting', snackbar);
 
     try {
         const response = await fetch(`${baseUrl}/comments`, {
@@ -103,32 +110,19 @@ form.addEventListener("submit", async (event) => {
         });
 
         if (response.ok) {
-            fetchAndDisplayComments();
             name.value = '';
             email.value = '';
             comment.value = '';
 
             submitButton.disabled = false;
 
-            responseContainer.innerHTML = `<h3>Success</h3>
-                                            <p>Your comment was successfully posted!</p>
-                                            <p>Thank you for joining the conversation!</p>`;
-            responseContainer.classList.add("border-success", "bg-success20", "show");
-
-            setTimeout(() => {
-                responseContainer.classList.remove("border-success", "bg-success20", "show");
-            }, 6000);
+            displaySnackbar('commentSuccess', snackbar);
 
             console.log("Comment submitted");
         } else {
-            responseContainer.innerHTML = `<h3>Error</h3>
-                                            <p>Oh no! An error has occurred!</p>
-                                            <p>Please try again.</p>`;
-            responseContainer.classList.add("border-error", "bg-error20", "show");
+            
+            displaySnackbar('error', snackbar);
 
-            setTimeout(() => {
-                responseContainer.classList.remove("border-error", "bg-error20", "show");
-            }, 6000);
             const errorData = await response.json();
             console.log("Error:", errorData.message);
         }

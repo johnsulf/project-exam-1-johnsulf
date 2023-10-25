@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <div id="commentsSnackbar" class="snackbar hidden"></div>
     <header id="header"></header>
     <main>
         <section class="blog">
@@ -38,9 +39,6 @@
                     <h3>Write a Comment</h3>
                     <p>Please keep comments respectful and constructive.<br>Let's make this a positive space for
                         everyone!</p>
-                    <div class="blog__conversation__response hidden">
-
-                    </div>
                     <form class="blog__conversation__form">
                         <input type="hidden" id="commentId" />
                         <label for="commentName">Name*</label>
@@ -49,7 +47,7 @@
                         <input type="email" id="commentEmail" placeholder="Write Your Email Here" required>
                         <label for="commentComment">Comment*</label>
                         <textarea rows="6" id="commentComment" placeholder="Write Your Comment Here" required></textarea>
-                        <button type="submit" class="cta">submit</button>
+                        <button type="submit" id="commentSubmit" class="cta">submit</button>
                     </form>
                 </section>
                 <section class="blog__conversation__comments"></section>

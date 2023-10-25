@@ -79,9 +79,10 @@ li { font-size: var(--fs-300); }
 .bg-acc40 { background-color: var(--clr-acc40); }
 
 .bg-error { background-color: var(--clr-error); }
-.bg-error20 { background-color: var(--clr-error20); }
+.bg-errorBg { background-color: var(--clr-errorBg); }
 .bg-success { background-color: var(--clr-success); }
-.bg-success20 { background-color: var(--clr-success20); }
+.bg-successBg { background-color: var(--clr-successBg); }
+.bg-infoBg { background-color: var(--clr-infoBg); }
 
 /* margin */
 .m-1 { margin: var(--s-75); }
@@ -139,11 +140,13 @@ li { font-size: var(--fs-300); }
     box-shadow: var(--bs-1);
 }
 
-/* borders */
+/* snackbar borders */
 .border-error {
     border-left: var(--clr-error) 8px solid;
 }
 .border-success {
     border-left: var(--clr-success) 8px solid;
 }
-
+.border-info {
+    border-left: var(--clr-sec) 8px solid;
+}
