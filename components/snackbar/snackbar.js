@@ -5,7 +5,7 @@ export function displaySnackbar(context, snackbar) {
             snackbar.classList.remove("border-info", "bg-infoBg", "show");
             snackbar.innerHTML = `<h3>Waiting</h3>
                                     <p>Please hold on.</p>
-                                    <p>This should'nt take long.</p>`;
+                                    <p>This shouldn't take long.</p>`;
 
             snackbar.classList.add("border-info", "bg-infoBg", "show");  
 
@@ -16,8 +16,7 @@ export function displaySnackbar(context, snackbar) {
        
             snackbar.innerHTML = `<h3>Success</h3>
                                     <p>Your comment was successfully posted!</p>
-                                    <p>It will display as soon as it has been approved by a moderator!</p>
-                                    <p>Thank you for joining the conversation!</p>`;
+                                    <p>It will display as soon as it has been approved by a moderator!</p>`;
 
             snackbar.classList.add("border-success", "bg-successBg", "show");
 
