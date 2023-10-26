@@ -1,9 +1,9 @@
 export function buildLatestPostsLoader() {
     let latestPostsLoader = '';
-    for (let i = 0; i < 4; i++) { 
+    for (let i = 0; i < 4; i++) {
         latestPostsLoader += `<a href="/pages/blog.html?id=77" class="blog-card bs-1 loading">
                                 <div class="load-overlay"></div> 
-                                <div class="blog-card__img" style="background-color: var(--clr-pri20)"></div>
+                                <div class="blog-card__img" style="background-color: var(--color-primary20)"></div>
                                 <div class="blog-card__content | py-2 px-1">
                                     <p class="blog-card__content_title | fs-s fw-800"></p>
                                     <div class="blog-card__content_bottom">
@@ -18,7 +18,7 @@ export function buildLatestPostsLoader() {
 
 export function buildCategoriesLoader() {
     let categoriesCardLoaderHtml = '';
-    for (let i = 0; i < 4; i++) { 
+    for (let i = 0; i < 4; i++) {
         categoriesCardLoaderHtml += `<a href="#" class="categories__cards_card loading">  
                                         <div class="load-overlay"></div>          
                                         <div class="categories__cards_card__img"></div>
@@ -32,10 +32,10 @@ export function buildCategoriesLoader() {
 
 export function buildRecentBlogLoader() {
     let recentBlogLoader = '';
-     
+
     recentBlogLoader += `<div class="blog-card bg-white loading">
                             <div class="load-overlay"></div> 
-                            <div class="blog-card__img" style="background-color: var(--clr-pri20)"></div>
+                            <div class="blog-card__img" style="background-color: var(--color-primary20)"></div>
                             <div class="blog-card__content | py-3 px-1">
                                 <p class="blog-card__content_title | fs-m fw-800"></p>
                                 <div class="blog-card__content_bottom">
@@ -44,13 +44,13 @@ export function buildRecentBlogLoader() {
                                 </div>
                             </div>
                         </div>`;
-    
+
     return recentBlogLoader;
 }
 
 export function buildBlogLoader(header, authDate, content, image) {
     header.innerHTML = `<p class="line"></p>`;
-    image.innerHTML = `<div class="blog-image my-2 h-15 loading" style="background-color: var(--clr-pri20)">
+    image.innerHTML = `<div class="blog-image my-2 h-15 loading" style="background-color: var(--color-primary20)">
                             <div class="load-overlay"></div>
                         </div>`;
     authDate.innerHTML = `<p class="line"></p>`;
@@ -63,7 +63,7 @@ export function buildBlogLoader(header, authDate, content, image) {
 
 export function buildBlogsLoader() {
     let blogsLoader = '';
-    for (let i = 0; i < 6; i++) { 
+    for (let i = 0; i < 6; i++) {
         blogsLoader += `<div class="blogs__cards__card loading">
                         <div class="load-overlay"></div> 
                         <a class="card-flex" href="#">
@@ -85,7 +85,7 @@ export function buildBlogsLoader() {
                                 <p class="line mb-1"></p>
                             </section>
                             <section class="right">
-                                <div style="background-color: var(--clr-pri20); border: 1px solid white;"></div>
+                                <div style="background-color: var(--color-primary20); border: 1px solid white;"></div>
                             </section>
                         </a>
                     </div>`;

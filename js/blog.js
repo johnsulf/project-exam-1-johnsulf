@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function fetchBlogData() {
-  buildBlogLoader(blogHeader, blogAuthorDate, blogImage, blogContent);
+    buildBlogLoader(blogHeader, blogAuthorDate, blogImage, blogContent);
 
     let description = document.head.children[3].content;
     let blogPost;
@@ -42,8 +42,8 @@ async function fetchBlogData() {
         blogImage.innerHTML = `<img src="${blogPost.featuredImage}" 
                                     alt="${blogPost.featuredImageAlt}"
                                     srcset="">
-                                <figcaption>${blogPost.featuredImageCaption}</figcaption>`; 
-  
+                                <figcaption>${blogPost.featuredImageCaption}</figcaption>`;
+
     } catch (error) {
         console.log("Error fetching blog:", error);
     }
@@ -74,7 +74,7 @@ async function fetchAndDisplayComments() {
 
             if (comments.length === 0) {
                 commentsHTML += `<p>There is no comments yet. Start the conversation!</p>`;
-            } 
+            }
 
             for (const comment of comments) {
                 commentsHTML += `
@@ -114,7 +114,7 @@ form.addEventListener("submit", async (event) => {
     });
 
     submitButton.disabled = true;
-    
+
     displayToast('waiting', toast);
 
     try {
@@ -135,7 +135,7 @@ form.addEventListener("submit", async (event) => {
 
             console.log("Comment submitted");
         } else {
-            
+
             displayToast('error', toast);
 
             const errorData = await response.json();

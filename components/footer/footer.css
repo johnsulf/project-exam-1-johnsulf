@@ -4,12 +4,12 @@ footer {
     align-items: center;
     text-align: center;
 
-    gap: var(--s-300);
-    color: var(--clr-white);
-    border-radius: var( --r-22-00);
-    background-color: var(--clr-pri);
+    gap: var(--size-300);
+    color: var(--color-white);
+    border-radius: var( --radius-top-rounded);
+    background-color: var(--color-primary);
 }
 
 footer nav {
-    margin-top: var(--s-300);
+    margin-top: var(--size-300);
 }

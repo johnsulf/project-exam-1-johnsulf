@@ -54,12 +54,16 @@ async function setCards(perPage) {
             blogsCardsContainer.innerHTML += blogCardHtml;
         }
     });
-    
-    moreButton.disabled = false;
+
+    if (activeTab != 0 || posts.length === 12) {
+        moreButton.disabled = true;
+    } else {
+        moreButton.disabled = false;
+    }
 }
 
 moreButton.addEventListener('click', () => {
-    perPage = perPage+5;
+    perPage = perPage + 5;
     setCards(perPage);
 })
 
@@ -71,7 +75,7 @@ async function initTabsAndHeader() {
 
     const updateH1 = (index) => {
         const { description } = categories[index];
-        headerH1.innerText = tabs[index+1].innerText;
+        headerH1.innerText = tabs[index + 1].innerText;
         headerParagraph.innerText = description;
     };
 
