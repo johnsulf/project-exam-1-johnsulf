@@ -10,6 +10,7 @@ const blogHeader = document.querySelector(".blog-header");
 const blogAuthorDate = document.querySelector(".blog-author-date");
 const blogImage = document.querySelector(".blog-image");
 const blogContent = document.querySelector(".blog-content");
+const blogImgDialog = document.querySelector("#blogImgDialog");
 
 let blog;
 
@@ -22,12 +23,13 @@ async function fetchBlogData() {
   buildBlogLoader(blogHeader, blogAuthorDate, blogImage, blogContent);
 
     let description = document.head.children[3].content;
+    let blogPost;
     const id = new URLSearchParams(window.location.search).get('id');
 
     try {
         const response = await fetch(`${baseUrl}/posts/${id}?_embed`);
         blog = await response.json();
-        const blogPost = BlogPost.fromJson(blog);
+        blogPost = BlogPost.fromJson(blog);
 
         console.log("Blog: ", blog);
 
@@ -45,6 +47,19 @@ async function fetchBlogData() {
     } catch (error) {
         console.log("Error fetching blog:", error);
     }
+
+    blogImage.addEventListener('click', (event) => {
+        blogImgDialog.innerHTML = `<img src="${blogPost.featuredImage}" 
+        alt="${blogPost.featuredImageAlt}"
+        srcset="">`
+        blogImgDialog.showModal();
+    });
+
+    blogImgDialog.addEventListener('click', (event) => {
+        if (event.target.localName != "img") {
+            blogImgDialog.close();
+        }
+    });
 }
 
 async function fetchAndDisplayComments() {
