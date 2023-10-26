@@ -142,7 +142,7 @@ li,p { font-size: var(--fs-300); }
     box-shadow: var(--bs-1);
 }
 
-/* snackbar borders */
+/* toast borders */
 .border-error {
     border-left: var(--clr-error) 8px solid;
 }

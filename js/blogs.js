@@ -8,19 +8,23 @@ const headerParagraph = document.querySelector(".blogs__header-p");
 const blogsCardsContainer = document.querySelector(".blogs__cards");
 
 const tabs = [...document.querySelectorAll("[id^='tab']")];
+const moreButton = document.querySelector("#moreButton");
 const baseUrl = "https://wp.erlendjohnsen.com/wp-json/wp/v2/";
 
 let activeTab = 0;
 let categoryId = '0';
+let perPage = 10;
 
 document.addEventListener('DOMContentLoaded', () => {
     initTabsAndHeader();
 });
 
-async function setCards() {
+async function setCards(perPage) {
     blogsCardsContainer.innerHTML = buildBlogsLoader();
-    const posts = await fetchData(baseUrl + "posts?_embed&page=1", headerParagraph);
+    moreButton.disabled = true;
+    const posts = await fetchData(baseUrl + `posts?_embed&per_page=${perPage}`, headerParagraph);
     blogsCardsContainer.innerHTML = "";
+
     posts.forEach(post => {
         if (categoryId === '0' || post.categories[0].toString() === categoryId) {
             const blogPost = BlogPost.fromJson(post);
@@ -50,7 +54,14 @@ async function setCards() {
             blogsCardsContainer.innerHTML += blogCardHtml;
         }
     });
+    
+    moreButton.disabled = false;
 }
+
+moreButton.addEventListener('click', () => {
+    perPage = perPage+5;
+    setCards(perPage);
+})
 
 
 async function initTabsAndHeader() {
@@ -100,7 +111,7 @@ function toggleTabSelection(index) {
     activeTab = index;
 
     categoryId = reverseCategoryMap[activeTab] || '0';
-    setCards();
+    setCards(perPage);
 }
 
 function getCategoryId() {

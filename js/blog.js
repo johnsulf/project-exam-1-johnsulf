@@ -1,7 +1,7 @@
 import { BlogPost } from "./models/blogPost.js";
 import { buildBlogLoader } from "../components/loaders/loaders.js";
 import { formattedDate } from "./helpers/timeFormatter.js";
-import { displaySnackbar } from "../components/snackbar/snackbar.js";
+import { displayToast } from "../components/toast/toast.js";
 
 const baseUrl = "https://wp.erlendjohnsen.com/wp-json/wp/v2";
 
@@ -104,7 +104,7 @@ form.addEventListener("submit", async (event) => {
     const comment = document.querySelector("#commentComment");
     const submitButton = document.querySelector("#commentSubmit");
 
-    const snackbar = document.querySelector("#commentsSnackbar");
+    const toast = document.querySelector("#commentsToast");
 
     const payload = JSON.stringify({
         post: postId,
@@ -115,7 +115,7 @@ form.addEventListener("submit", async (event) => {
 
     submitButton.disabled = true;
     
-    displaySnackbar('waiting', snackbar);
+    displayToast('waiting', toast);
 
     try {
         const response = await fetch(`${baseUrl}/comments`, {
@@ -131,12 +131,12 @@ form.addEventListener("submit", async (event) => {
 
             submitButton.disabled = false;
 
-            displaySnackbar('commentSuccess', snackbar);
+            displayToast('commentSuccess', toast);
 
             console.log("Comment submitted");
         } else {
             
-            displaySnackbar('error', snackbar);
+            displayToast('error', toast);
 
             const errorData = await response.json();
             console.log("Error:", errorData.message);

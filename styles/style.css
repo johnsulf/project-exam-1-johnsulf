@@ -3,7 +3,7 @@
 @import url(imports/loader.css);
 @import url(/components/header/header.css);
 @import url(/components/footer/footer.css);
-@import url(/components/snackbar/snackbar.css);
+@import url(/components/toast/toast.css);
 
 * {
     margin: 0;
@@ -54,6 +54,17 @@ main {
     background-color: var(--clr-sec);
     box-shadow: var(--bs-1);
     transition: var(--transition);
+}
+
+.cta:disabled,
+.cta:disabled:hover {
+    color: var(--clr-pri20);
+    background-color: var(--clr-sec40);
+    transition: none;
+}
+
+.cta:disabled:hover {
+    cursor: not-allowed;
 }
 
 .blog-card {
@@ -189,6 +200,8 @@ main {
 
 .blogs {
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .blogs__tab-bar {
@@ -262,6 +275,10 @@ main {
     width: 90%;
     aspect-ratio: 2/1.5;
     object-fit: cover;
+}
+
+#moreButton {
+    align-self: center;
 }
 
 .blog {
@@ -378,8 +395,8 @@ main {
   }
 
  .contact {
-    margin: var(--s-100);
-    padding: var(--s-50);
+    margin: auto;
+    padding: var(--s-100);
  }
  
  .contact__articles__article {
@@ -408,7 +425,21 @@ main {
 .contact__form__form textarea {
     background-color: var(--clr-bg);
     border-radius: var(--r-1);
-    margin-bottom: var(--s-100);}
+    margin-bottom: var(--s-100);
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    margin: var(--s-50);
+    padding: var(--s-50);
+    gap: var(--s-100);
+}
+
+.about img {
+    width: 100%;
+    object-fit: contain;
+}
 
 @media screen and (min-width: 700px) {
 
@@ -465,5 +496,13 @@ main {
 
     .middle {
         display: block;
+    }
+
+    .about {
+        flex-direction: row;
+    }
+
+    .about > * {
+        flex: 1;
     }
 }

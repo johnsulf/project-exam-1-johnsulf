@@ -1,8 +1,8 @@
 
-import { displaySnackbar } from "../components/snackbar/snackbar.js"; 
+import { displayToast } from "../components/toast/toast.js"; 
 
 const contactForm = document.querySelector(".contact__form__form");
-const snackbar = document.querySelector("#contactSnackbar");
+const toast = document.querySelector("#contactToast");
 
 contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -19,7 +19,7 @@ contactForm.addEventListener("submit", async (event) => {
     formData.append("your-subject", subject.value);
     formData.append("your-message", message.value);    
 
-    displaySnackbar('waiting', snackbar);
+    displayToast('waiting', toast);
     
     try {
         const response = await fetch(url, {
@@ -29,7 +29,7 @@ contactForm.addEventListener("submit", async (event) => {
 
         if (response.ok) {
             console.log("Contact Form submitted successfully");
-            displaySnackbar('contactSuccess', snackbar);
+            displayToast('contactSuccess', toast);
             
             name.value = '';
             email.value = '';
@@ -37,7 +37,7 @@ contactForm.addEventListener("submit", async (event) => {
             message.value = '';
         } 
     } catch (e) {
-        displaySnackbar('error', snackbar);
+        displayToast('error', toast);
         console.error('Error: ' + e);
     }
 });
