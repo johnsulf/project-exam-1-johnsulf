@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function setCards() {
     blogsCardsContainer.innerHTML = buildBlogsLoader();
-    const posts = await fetchData(baseUrl + "posts?_embed", headerParagraph);
+    const posts = await fetchData(baseUrl + "posts?_embed&page=1", headerParagraph);
     blogsCardsContainer.innerHTML = "";
     posts.forEach(post => {
         if (categoryId === '0' || post.categories[0].toString() === categoryId) {

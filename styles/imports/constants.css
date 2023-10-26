@@ -67,6 +67,8 @@ li,p { font-size: var(--fs-300); }
 .tt-up { text-transform: uppercase; }
 .tt-cap { text-transform: capitalize; }
 
+.fs-italic { font-style: italic; }
+
 /* background colors */
 .bg-clr { background-color: var(--clr-bg); }
 .bg-pri { background-color: var(--clr-pri); }

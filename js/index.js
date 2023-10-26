@@ -3,7 +3,7 @@ import { populateBlogCard } from "./helpers/populateBlogCard.js";
 
 export async function fetchData(url, container) {
     try {
-        const response = await fetch(`${url}`);
+        const response = await fetch(url);
         if (!response.ok) {
             throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
         }
@@ -17,7 +17,7 @@ export async function fetchData(url, container) {
 
 document.addEventListener('DOMContentLoaded', () => {
     const baseUrl = "https://wp.erlendjohnsen.com/wp-json/wp/v2/";
-    const postsEmbedUrl = "posts?_embed";
+    const postsEmbedUrl = "posts?_embed&per_page=20";
     const categoriesUrl = "categories";
 
     const recentBlogContainer = document.querySelector(".recent-blog");
