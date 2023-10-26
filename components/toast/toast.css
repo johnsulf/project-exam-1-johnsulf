@@ -1,0 +1,21 @@
+@import url(../../styles/imports/variables.css);
+
+.toast {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 30rem;
+    z-index: 100;
+    padding: var(--s-50);
+    border-radius: var(--r-1);
+ }
+
+ .toast.hidden {
+    display: none;
+ }
+
+ .toast.show {
+    display: block;
+ }
