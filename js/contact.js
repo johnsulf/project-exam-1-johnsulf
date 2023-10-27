@@ -9,6 +9,7 @@ import {
 } from "./helpers/formHelpers.js";
 
 const contactForm = document.querySelector(".contact__form__form");
+const toast = document.querySelector("#contactToast");
 
 const name = document.querySelector("#contactName");
 const nameError = document.querySelector("#contactNameError");
@@ -24,8 +25,6 @@ const messageError = document.querySelector("#contactMessageError");
 
 const submitButton = document.querySelector("#contactSubmit");
 
-const toast = document.querySelector("#contactToast");
-
 const url = "https://wp.erlendjohnsen.com/wp-json/contact-form-7/v1/contact-forms/95/feedback";
 
 let isSubmitButtonPressed = false;
@@ -38,7 +37,7 @@ async function validateAndSubmitForm(event) {
     event.preventDefault();
     submitButton.disabled = true;
 
-    if (!validateContactForm()) {
+    if (!validateForm()) {
         if (isSubmitButtonPressed) {
             displayToast('formError', toast);
         }
@@ -57,8 +56,7 @@ async function validateAndSubmitForm(event) {
     submitButton.disabled = false;
 }
 
-
-function validateContactForm() {
+function validateForm() {
     let isNameValid = validateInputLength(name, nameError, 5);
     let isEmailValid = validateEmailPattern(email, emailError);
     let isSubjectValid = validateInputLength(subject, subjectError, 15);

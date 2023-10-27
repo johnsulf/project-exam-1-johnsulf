@@ -52,15 +52,22 @@
                     <h3>Write a Comment</h3>
                     <p>Please keep comments respectful and constructive.<br>Let's make this a positive space for
                         everyone!</p>
-                    <form class="blog__conversation__form">
+                    <form novalidate class="blog__conversation__form">
+
                         <input type="hidden" id="commentId" />
+
                         <label for="commentName">Name*</label>
-                        <input type="text" id="commentName" placeholder="Write Your Name Here" required>
+                        <input type="text" id="commentName" placeholder="Write Your Name Here">
+                        <p class="form-error tc-error" id="commentNameError">Please enter a name</p>
+
                         <label for="commentEmail">Email*</label>
-                        <input type="email" id="commentEmail" placeholder="Write Your Email Here" required>
+                        <input type="email" id="commentEmail" placeholder="Write Your Email Here">
+                        <p class="form-error tc-error" id="commentEmailError">Please enter a valid email</p>
+
                         <label for="commentComment">Comment*</label>
-                        <textarea rows="6" id="commentComment" placeholder="Write Your Comment Here"
-                            required></textarea>
+                        <textarea rows="6" id="commentComment" placeholder="Write Your Comment Here"></textarea>
+                        <p class="form-error tc-error" id="commentCommentError">Please enter a comment</p>
+
                         <button type="submit" id="commentSubmit" class="cta">submit</button>
                     </form>
                 </section>

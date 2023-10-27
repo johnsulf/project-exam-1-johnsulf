@@ -435,7 +435,10 @@ main {
 #contactNameError,
 #contactEmailError,
 #contactSubjectError,
-#contactMessageError {
+#contactMessageError,
+#commentNameError,
+#commentEmailError,
+#commentCommentError {
     display: none;
 }
 
