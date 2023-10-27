@@ -52,6 +52,18 @@ export function displayToast(context, toast) {
             }, 6000);
             break;
 
+        case "formError":
+            toast.classList.remove("border-info", "bg-infoBg", "tc-ter", "show");
+            toast.innerHTML = `<h3>Error</h3>
+                                        <p>There are errors in your form.</p>
+                                        <p>Please fix and try again.</p>`;
+            toast.classList.add("border-error", "bg-errorBg", "tc-error", "show");
+
+            setTimeout(() => {
+                toast.classList.remove("border-error", "bg-errorBg", "tc-error", "show");
+            }, 6000);
+            break;
+
         default:
             break;
     }
