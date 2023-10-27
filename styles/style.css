@@ -425,7 +425,18 @@ main {
 .contact__form__form textarea {
     background-color: var(--color-background);
     border-radius: var(--radius-1);
-    margin-bottom: var(--size-100);
+}
+
+.form-error {
+    font-size: var(--font-size-200);
+    margin-bottom: var(--size-50);
+}
+
+#contactNameError,
+#contactEmailError,
+#contactSubjectError,
+#contactMessageError {
+    display: none;
 }
 
 .about {

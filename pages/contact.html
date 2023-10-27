@@ -53,17 +53,29 @@
             <h2>Other Inquiries</h2>
             <p>Please use the form to contact us.</p>
             <p class="mb-1 fs-italic">* = Required fields</p>
-            <form action="" class="contact__form__form">
+            <form novalidate class="contact__form__form">
+
                 <label for="contactName">Name*</label>
-                <input type="text" id="contactName" placeholder="Write Your Name Here" required minlength="6">
+                <input type="text" id="contactName" placeholder="Write Your Name Here">
+                <p class="form-error tc-error" id="contactNameError">Name has to be longer than 5
+                    characters</p>
+
                 <label for="contactEmail">Email*</label>
-                <input type="email" id="contactEmail" placeholder="Write Your Email Here" required>
+                <input type="email" id="contactEmail" placeholder="Write Your Email Here">
+                <p class="form-error tc-error" id="contactEmailError">Please provide a valid email</p>
+
                 <label for="contactSubject">Subject*</label>
-                <input type="text" id="contactSubject" placeholder="Write Your Subject Here" required minlength="16">
+                <input type="text" id="contactSubject" placeholder="Write Your Subject Here">
+                <p class="form-error tc-error" id="contactSubjectError">Subject has to be longer than 15
+                    characters</p>
+
                 <label for="contactMessage">Message*</label>
-                <textarea rows="6" id="contactMessage" placeholder="Write Your Message Here" required
-                    minlength="26"></textarea>
-                <button type="submit" class="cta w-half">submit</button>
+                <textarea rows="6" id="contactMessage" placeholder="Write Your Message Here"></textarea>
+                <p class="form-error tc-error" id="contactMessageError">Subject has to be longer than 26
+                    characters</p>
+
+                <button type="submit" class="cta w-half my-2">submit</button>
+
             </form>
         </section>
     </main>
