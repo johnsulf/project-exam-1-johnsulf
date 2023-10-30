@@ -25,7 +25,7 @@
 .search-container__result:hover,
 .blogs__cards__card:hover {
     cursor: pointer;
-    filter: brightness(var(--b-hover));
+    filter: brightness(var(--brightness-hover));
 }
 
 
