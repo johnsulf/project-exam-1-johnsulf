@@ -151,7 +151,7 @@ main {
 .categories-card__img {
     flex: 1;
     object-fit: contain;
-    height: var(--size-300);
+    height: var(--size-400);
     background-color: var(--color-primary20);
     padding: var(--size-50);
     border-radius: var(--radius-top-left-bottom-right-corner)
