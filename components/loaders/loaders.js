@@ -1,6 +1,6 @@
 export function buildLatestPostsLoader() {
     let latestPostsLoader = '';
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 3; i++) {
         latestPostsLoader += `<a href="/pages/blog.html?id=77" class="blog-card bs-1 loading">
                                 <div class="load-overlay"></div> 
                                 <div class="blog-card__img" style="background-color: var(--color-primary20)"></div>
