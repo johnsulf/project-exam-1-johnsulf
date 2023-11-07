@@ -8,7 +8,7 @@ import {
     clearInputFields
 } from "./helpers/formHelpers.js";
 
-const contactForm = document.querySelector(".contact__form__form");
+const contactForm = document.querySelector(".contact__form-form");
 const toast = document.querySelector("#contactToast");
 
 const name = document.querySelector("#contactName");

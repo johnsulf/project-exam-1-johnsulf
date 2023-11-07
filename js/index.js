@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const postsEmbedUrl = "posts?_embed&per_page=20";
     const categoriesUrl = "categories";
 
-    const recentBlogContainer = document.querySelector(".recent-blog");
+    const recentBlogContainer = document.querySelector(".featured__recent-blog");
     const latestPostsContainer = document.querySelector(".latest-posts__posts");
-    const categoriesContainer = document.querySelector(".categories__cards");
+    const categoriesContainer = document.querySelector(".featured__categories-cards");
 
     let categoriesHtml = "";
     let currentPage = 1;
@@ -84,9 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderCategoryCard(c) {
         return `
-        <a href="/pages/blogs.html?category=${c.id}" class="categories__cards_card">
-            <img class="categories__cards_card__img" src="assets/icons/logo.png" alt="">
-            <p class="categories__cards_card__title | fs-s fw-700 mx-1">${c.name}</p>
+        <a href="/pages/blogs.html?category=${c.id}" class="categories-card">
+            <img class="categories-card__img" src="assets/icons/logo.png" alt="">
+            <p class="categories-card__title fs-s fw-700 mx-1">${c.name}</p>
         </a>`;
     }
 

@@ -29,11 +29,11 @@ async function setCards(perPage) {
         if (categoryId === '0' || post.categories[0].toString() === categoryId) {
             const blogPost = BlogPost.fromJson(post);
             const blogCardHtml = `
-            <div class="blogs__cards__card">
+            <div class="blogs-card">
                 <a class="card-flex" href="/pages/blog.html?id=${blogPost.id}">
-                    <section class="left">
+                    <section class="blogs-card__info">
                         <div>
-                            <div class="blogs__cards__card-category mb-1">
+                            <div class="blogs-card__category mb-1">
                                 <p class="tt-up fs-xs">${blogPost.category}</p>
                             </div>
                             <h2 class="fs-m">${blogPost.title}</h2>
@@ -43,10 +43,10 @@ async function setCards(perPage) {
                             <p>${blogPost.date}</p>
                         </div>
                     </section>
-                    <section class="middle">
+                    <section class="blogs-card__excerpt">
                         <p>${blogPost.excerpt}</p>
                     </section>
-                    <section class="right">
+                    <section class="blogs-card__img">
                         <img src="${blogPost.featuredImage}" alt="${blogPost.featuredImageAlt}" />
                     </section>
                 </a>

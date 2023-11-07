@@ -10,7 +10,7 @@ import {
     clearInputFields
 } from "./helpers/formHelpers.js";
 
-const commentForm = document.querySelector(".blog__conversation__form");
+const commentForm = document.querySelector(".blog__conversation-form");
 const toast = document.querySelector("#commentsToast");
 
 const name = document.querySelector("#commentName");
@@ -37,12 +37,12 @@ export async function fetchAndDisplayComments() {
             let commentsHTML = '<h3>Comments</h3>';
 
             if (comments.length === 0) {
-                commentsHTML += `<p>There is no comments yet. Start the conversation!</p>`;
+                commentsHTML += `<p>There are no comments yet. Start the conversation!</p>`;
             }
 
             for (const comment of comments) {
                 commentsHTML += `
-                    <div class="blog__conversation__comments__comment">
+                    <div class="comments__comment">
                         <h4>${comment.author_name}</h4>
                         <time class="fs-xs">${formattedDate(comment.date)}</time>
                         <p>${comment.content.rendered}</p>

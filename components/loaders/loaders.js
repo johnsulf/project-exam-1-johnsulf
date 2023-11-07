@@ -4,9 +4,9 @@ export function buildLatestPostsLoader() {
         latestPostsLoader += `<a href="/pages/blog.html?id=77" class="blog-card bs-1 loading">
                                 <div class="load-overlay"></div> 
                                 <div class="blog-card__img" style="background-color: var(--color-primary20)"></div>
-                                <div class="blog-card__content | py-2 px-1">
-                                    <p class="blog-card__content_title | fs-s fw-800"></p>
-                                    <div class="blog-card__content_bottom">
+                                <div class="blog-card__content py-2 px-1">
+                                    <p class="blog-card__content_title fs-s fw-800"></p>
+                                    <div class="blog-card__content-bottom">
                                         <p class="line w-25"></p>
                                         <time class="line"></time>
                                     </div>
@@ -19,10 +19,10 @@ export function buildLatestPostsLoader() {
 export function buildCategoriesLoader() {
     let categoriesCardLoaderHtml = '';
     for (let i = 0; i < 4; i++) {
-        categoriesCardLoaderHtml += `<a href="#" class="categories__cards_card loading">  
+        categoriesCardLoaderHtml += `<a href="#" class="categories-card loading">  
                                         <div class="load-overlay"></div>          
-                                        <div class="categories__cards_card__img"></div>
-                                        <div class="categories__cards_card__title">
+                                        <div class="categories-card__img"></div>
+                                        <div class="categories-card__title">
                                             <div class="line mx-1"></div>
                                         </div>
                                     </a>`;
@@ -36,9 +36,9 @@ export function buildRecentBlogLoader() {
     recentBlogLoader += `<div class="blog-card bg-white loading">
                             <div class="load-overlay"></div> 
                             <div class="blog-card__img" style="background-color: var(--color-primary20)"></div>
-                            <div class="blog-card__content | py-3 px-1">
-                                <p class="blog-card__content_title | fs-m fw-800"></p>
-                                <div class="blog-card__content_bottom">
+                            <div class="blog-card__content py-3 px-1">
+                                <p class="blog-card__content_title fs-m fw-800"></p>
+                                <div class="blog-card__content-bottom">
                                     <p class="line w-25"></p>
                                     <time class="line"></time>
                                 </div>
@@ -65,10 +65,10 @@ export function buildBlogLoader(header, image, content) {
 export function buildBlogsLoader() {
     let blogsLoader = '';
     for (let i = 0; i < 6; i++) {
-        blogsLoader += `<div class="blogs__cards__card loading">
+        blogsLoader += `<div class="blogs-card loading">
                         <div class="load-overlay"></div> 
                         <a class="card-flex" href="#">
-                            <section class="left">
+                            <section class="blogs-card__info">
                                 <div>
                                     <h2 class="fs-m line"></h2>
                                     <h2 class="fs-m line"></h2>
@@ -78,14 +78,14 @@ export function buildBlogsLoader() {
                                     <p class="fw-700 line mb-1"></p>
                                 </div>
                             </section>
-                            <section class="middle">
+                            <section class="blogs-card__excerpt">
                                 <p class="line mb-1"></p>
                                 <p class="line mb-1"></p>
                                 <p class="line mb-1"></p>
                                 <p class="line mb-1"></p>
                                 <p class="line mb-1"></p>
                             </section>
-                            <section class="right">
+                            <section class="blogs-card__img">
                                 <div style="background-color: var(--color-primary20); border: 1px solid white;"></div>
                             </section>
                         </a>

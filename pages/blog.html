@@ -30,16 +30,16 @@
     <main>
         <section class="blog">
             <article class="blog__article">
-                <section class="blog__article__top-row">
-                    <div class="blog__article__top-row__category">
+                <section class="blog__article-top-row">
+                    <div class="top-row__category">
                         <p class="blog-category tt-up fs-xs tc-acc"></p>
                     </div>
-                    <button class="blog-close" onclick="history.back()" type="button" title="Close Blog">
+                    <button class="top-row__close" onclick="history.back()" type="button" title="Close Blog">
                         <i class="fa-solid fa-close tc-primary"></i>
                     </button>
                 </section>
-                <section class="blog__article__content">
-                    <dialog id="blogImgDialog" class="blog__article__content__img-dialog"></dialog>
+                <section class="blog__article-content">
+                    <dialog id="blogImgDialog" class="img-dialog"></dialog>
                     <h1 class="blog-header"></h1>
                     <p class="blog-author-date fw-700 tc-pri"></p>
                     <figure class="blog-image my-2"></figure>
@@ -52,7 +52,7 @@
                     <h3>Write a Comment</h3>
                     <p>Please keep comments respectful and constructive.<br>Let's make this a positive space for
                         everyone!</p>
-                    <form novalidate class="blog__conversation__form">
+                    <form novalidate class="blog__conversation-form">
 
                         <input type="hidden" id="commentId" />
 

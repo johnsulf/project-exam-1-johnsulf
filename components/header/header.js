@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initHeader() {
     buildHeader();
-    toggleMobileFeature('.menu-open', '.menu-close', '.header-content', 'mobile-menu');
-    toggleMobileFeature('.search-open', '.search-close', '.header-content', 'mobile-search');
+    toggleMobileFeature('.menu-open', '.menu-close', '.header__content', 'mobile-menu');
+    toggleMobileFeature('.search-open', '.search-close', '.header__content', 'mobile-search');
     buildSearchResults();
 }
 
@@ -15,24 +15,24 @@ function initHeader() {
 function buildHeader() {
     const header = document.querySelector('#header');
     header.innerHTML =
-        `<section class="header-content">
+        `<section class="header__content">
             <button class="menu-open" type="button" title="Open Navigation Menu">
-                <i class="fa-solid fa-bars tc-pri"></i>
+                <i class="fa-solid fa-bars tc-pri fs-m"></i>
             </button>
-            <a href="/index.html" class="title">
+            <a href="/index.html" class="header__content-title">
                 <span class="fw-600">putting</span><span class="fw-900">LAB</span>
             </a>
-            <div class="search-container">
+            <div class="header__content-search-container">
                 <button class="search-close" type="button" title="Close Search View">
                     <i class="fa-solid fa-close tc-white"></i>
                 </button>
                 <div class="search-container__input-results">
                     <input type="search" name="search" id="search" placeholder="Search for blogs">
-                    <div class="search-container__results | p-1"></div>
+                    <div class="search-container__results p-1"></div>
                 </div>    
             </div>
             <button class="search-open" type="button" title="Open Search View">
-                <i class="fa-solid fa-magnifying-glass tc-pri"></i>
+                <i class="fa-solid fa-magnifying-glass tc-pri fs-m"></i>
             </button>
             <nav class="nav">
                 <button class="menu-close" type="button" title="Close Navigation Menu">

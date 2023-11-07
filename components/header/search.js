@@ -31,12 +31,12 @@ export async function buildSearchResults() {
                 let resultsHTML = "";
                 blogs.forEach(blog => {
                     const blogPost = BlogPost.fromJson(blog);
-                    resultsHTML += `<a href="/pages/blog.html?id=${blogPost.id}" class="search-container__result">
-                                        <img class="search-container__result-img" src="${blogPost.featuredImage}" alt="" srcset="">
-                                        <div class="search-container__result-content">
+                    resultsHTML += `<a href="/pages/blog.html?id=${blogPost.id}" class="search-container__results-result">
+                                        <img class="result__img" src="${blogPost.featuredImage}" alt="" srcset="">
+                                        <div class="search-container__results-result-content">
                                             <p class="fw-700">${blogPost.title}</p>
                                             <p>${blogPost.category}</p>
-                                            <div class="search-container__result-content-bottom">
+                                            <div class="result__content-bottom">
                                                 <p>${blogPost.author}</p>
                                                 <time>${blogPost.date}</time>
                                             </div>
