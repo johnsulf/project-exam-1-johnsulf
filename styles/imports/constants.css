@@ -76,7 +76,8 @@ li, p { font-size: var(--font-size-300); }
 
 .bg-white { background-color: var(--color-white); }
 
-.bg-pri20 { background-color: var(--color-secondary40); }
+.bg-pri20 { background-color: var(--color-primary20); }
+.bg-pri70 { background-color: var(--color-primary70); }
 .bg-sec40 { background-color: var(--color-secondary40); }
 .bg-acc40 { background-color: var(--color-accent40); }
 

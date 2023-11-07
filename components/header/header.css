@@ -67,6 +67,7 @@ header {
     position: absolute;
     top: var(--size-250);
     min-width: 78%;
+    max-width: 90%;
     background-color: var(--color-primary);
     border-radius: var(--radius-2);
     z-index: 1;
@@ -104,18 +105,19 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1000;
-    flex-direction: column;
+    width: 100%;
+    z-index: 10;
     align-items: center;
     justify-content: center;
     background: var(--color-primary);
+    border-radius: var(--radius-bottom-rounded);
+    padding-block: var(--size-400);
 }
 
 .header-content.mobile-menu nav.nav ul {
-    flex-direction: column;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: var(--size-100);
 }
 
@@ -123,11 +125,16 @@ header {
     color: var(--color-white);
 }
 
+.header-content.mobile-menu nav.nav a:hover {
+    text-decoration: underline;
+}
+
 .menu-close, .search-close {
     display: none;
     position: absolute;
-    top: var(--size-250);
+    top: var(--size-100);
     left: var(--size-100);
+    z-index: 100;
 }
 
 .show {

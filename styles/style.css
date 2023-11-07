@@ -37,6 +37,7 @@ a,
 
 nav li {
     list-style-type: none;
+    font-size: 1rem;
 }
 
 main {
@@ -54,6 +55,7 @@ main {
     background-color: var(--color-secondary);
     box-shadow: var(--box-shadow-light);
     transition: var(--transition);
+    font-size: var(--font-size-300);
 }
 
 .cta:disabled,
@@ -98,10 +100,8 @@ main {
 
 .blog-card__content {
     position: relative;
-    justify-content: space-between;
 
     gap: var(--size-50);
-    border-radius: var(--radius-bottom-rounded);
 }
 
 .blog-card__content_category,
@@ -220,6 +220,7 @@ main {
     padding-inline: var(--size-100);
     font-size: var(--font-size-75);
     padding-bottom: 3px;
+    margin-top: 1rem;
 }
 
 .blogs__tab-bar__tab:hover {
@@ -271,9 +272,12 @@ main {
     display: none;
 }
 
+.right {
+    align-self: center;
+}
+
 .right > * {
     width: 90%;
-    aspect-ratio: 2/1.5;
     object-fit: cover;
 }
 
@@ -330,8 +334,9 @@ main {
 
  .blog__article img {
     width: 100%;
-    aspect-ratio: 1.5/1;
+    aspect-ratio: 1.35/1;
     object-fit: cover;
+    cursor: zoom-in;
  }
 
  .blog__article figcaption p {
@@ -346,7 +351,8 @@ main {
     gap: var(--size-50);
  }
 
- .blog__conversation__form {
+ .blog__conversation__form,
+ .contact__form__form {
     gap: var(--size-50);
     margin-block: var(--size-50);
  }
@@ -360,12 +366,16 @@ main {
 
     font-size: var(--size-100);
     border-radius: var(--radius-2);
-    text-indent: var(--size-50);
  }
 
+ .blog__conversation__form textarea,
+ .contact__form__form textarea {
+    padding: var(--size-50);
+ }
 
  .blog__conversation__form input,
  .contact__form__form input {
+    text-indent: var(--size-50);
     height: var(--size-250);
  }
 
@@ -383,15 +393,18 @@ main {
     transform: translate(-50%, -50%);
     width: 100%;
     max-width: 1100px;
+    border: none;
  }
 
  .blog__article__content__img-dialog img {
     object-fit: contain;
+    cursor: auto;
  }
 
  .blog__article__content__img-dialog::backdrop {
     background: black;
-    opacity: 0.75;
+    opacity: 0.85;
+    cursor: zoom-out;
   }
 
  .contact {
@@ -424,7 +437,6 @@ main {
 .contact__form__form input,
 .contact__form__form textarea {
     background-color: var(--color-background);
-    border-radius: var(--radius-1);
 }
 
 .form-error {
@@ -476,6 +488,7 @@ main {
     }
 
     .recent-blog {
+        margin-left: 1rem;
         flex: 2;
     }
 

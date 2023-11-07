@@ -18,13 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function fetchBlogData() {
-    buildBlogLoader(blogHeader, blogAuthorDate, blogImage, blogContent);
+    buildBlogLoader(blogHeader, blogImage, blogContent);
 
     let description = document.head.children[3].content;
     let blogPost;
     const id = new URLSearchParams(window.location.search).get('id');
 
-    try {
+/*     try {
         const response = await fetch(`${baseUrl()}/posts/${id}?_embed`);
         blog = await response.json();
         blogPost = BlogPost.fromJson(blog);
@@ -44,7 +44,7 @@ async function fetchBlogData() {
 
     } catch (error) {
         console.log("Error fetching blog:", error);
-    }
+    } */
 
     blogImage.addEventListener('click', () => {
         blogImgDialog.innerHTML = `<img src="${blogPost.featuredImage}" 

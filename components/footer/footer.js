@@ -13,5 +13,5 @@ function buildFooter() {
                 <li><a href="/pages/about.html" class="tc-white">about</a></li>
             </ul>
         </nav>
-        <p class="mb-1 fs-s">© 2023 puttingLAB, All Rights Reserved</p>`;
+        <p class="mb-1 fs-xs">© 2023 puttingLAB, All Rights Reserved</p>`;
 }

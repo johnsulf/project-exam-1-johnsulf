@@ -48,17 +48,18 @@ export function buildRecentBlogLoader() {
     return recentBlogLoader;
 }
 
-export function buildBlogLoader(header, authDate, content, image) {
-    header.innerHTML = `<p class="line"></p>`;
+export function buildBlogLoader(header, image, content) {
+    header.innerHTML = `<div class="line loading" style="height: 2rem">
+                            <div class="load-overlay"></div>
+                        </div>`;
     image.innerHTML = `<div class="blog-image my-2 h-15 loading" style="background-color: var(--color-primary20)">
                             <div class="load-overlay"></div>
                         </div>`;
-    authDate.innerHTML = `<p class="line"></p>`;
-    content.innerHTML = `<p class="line"></p>
-                        <p class="line mb-1"></p>
-                        <p class="line mb-1"></p>
-                        <p class="line mb-1"></p>
-                        <p class="line mb-1"></p>`;
+    let contentHTML = '';
+    for (let i = 0; i < 20; i++) { 
+        contentHTML += `<div class="line loading mb-1"><div class="load-overlay"></div></div>`;
+    }
+    content.innerHTML = contentHTML;
 }
 
 export function buildBlogsLoader() {
