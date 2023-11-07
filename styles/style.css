@@ -455,14 +455,11 @@ main {
 }
 
 .about {
-    display: flex;
-    flex-direction: column;
-    margin: var(--size-50);
-    padding: var(--size-50);
-    gap: var(--size-100);
+    margin: auto;
+    padding: var(--size-100);
 }
 
-.about img {
+.about__content-img {
     width: 100%;
     object-fit: contain;
 }
@@ -525,11 +522,13 @@ main {
         display: block;
     }
 
-    .about {
-        flex-direction: row;
+    .about__content {
+        display: flex;
+        align-items: start;
+        gap: var(--size-200);
     }
 
-    .about > * {
-        flex: 1;
+    .about__content-img {
+        width: 50%;
     }
 }
