@@ -27,7 +27,7 @@ async function fetchBlogData() {
     const id = new URLSearchParams(window.location.search).get('id');
 
      try {
-        const response = await fetch(`${baseUrl()}/posts/${id}?_emed`);
+        const response = await fetch(`${baseUrl()}/posts/${id}?_embed`);
         blog = await response.json();
         blogPost = BlogPost.fromJson(blog);
 
