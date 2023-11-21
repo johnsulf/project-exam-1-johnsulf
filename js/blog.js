@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
 async function fetchBlogData() {
     buildBlogLoader(blogHeader, blogImage, blogContent);
 
-    let description = document.head.children[3].content;
     let blogPost;
     const id = new URLSearchParams(window.location.search).get('id');
 
@@ -32,7 +31,13 @@ async function fetchBlogData() {
         blogPost = BlogPost.fromJson(blog);
 
         document.title += ` ${blogPost.title}`;
-        description = blogPost.excerpt;
+        document.querySelector('meta[name="description"]').setAttribute("content", blogPost.excerpt);
+      
+        document.querySelector('meta[property="og:title"]').setAttribute("content", blogPost.title);
+        document.querySelector('meta[property="og:description"]').setAttribute("content", blogPost.excerpt);
+        document.querySelector('meta[property="og:image"]').setAttribute("content", blogPost.featuredImage);
+        document.querySelector('meta[property="og:url"]').setAttribute("content", `${baseUrl()}/pages/blog.html?id=${id}`);
+
         blogCategory.innerHTML = `${blogPost.category}`;
         blogHeader.innerHTML = `${blogPost.title}`;
         blogAuthorDate.innerHTML = `${blogPost.author} - ${blogPost.date}`;
