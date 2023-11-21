@@ -3,6 +3,8 @@ import { buildBlogLoader } from "../components/loaders/loaders.js";
 import { fetchAndDisplayComments } from "./blogComments.js";
 import { baseUrl } from "./helpers/url.js";
 
+const blogContainer = document.querySelector(".blog");
+
 const blogCategory = document.querySelector(".blog-category");
 const blogHeader = document.querySelector(".blog-header");
 const blogAuthorDate = document.querySelector(".blog-author-date");
@@ -25,11 +27,9 @@ async function fetchBlogData() {
     const id = new URLSearchParams(window.location.search).get('id');
 
      try {
-        const response = await fetch(`${baseUrl()}/posts/${id}?_embed`);
+        const response = await fetch(`${baseUrl()}/posts/${id}?_emed`);
         blog = await response.json();
         blogPost = BlogPost.fromJson(blog);
-
-        console.log("Blog: ", blog);
 
         document.title += ` ${blogPost.title}`;
         description = blogPost.excerpt;
@@ -43,7 +43,11 @@ async function fetchBlogData() {
                                 <figcaption>${blogPost.featuredImageCaption}</figcaption>`;
 
     } catch (error) {
-        console.log("Error fetching blog:", error);
+        console.error(error);
+        blogContainer.innerHTML = `<div>
+                                    <p class="ta-center w-full">Oops... Something went wrong😞</p>
+                                    <button class="cta" onclick="history.back()" type="button" title="Go back">Go back</button>
+                                </div> `;
     } 
 
     blogImage.addEventListener('click', () => {

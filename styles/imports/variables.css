@@ -21,12 +21,12 @@
     --color-black40: #00000040;
 
     --color-error: red;
-    --color-errorBg: #ffd5d7;
+    --color-errorBg: #ffe6e7;
 
     --color-success: green;
-    --color-successBg: #e1ffe6;
+    --color-successBg: #e8ffec;
 
-    --color-infoBg: #d6f3ff;
+    --color-infoBg: #e7f8ff;
 
     /* typography */
     --font-family-body: 'Lora', serif;

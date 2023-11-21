@@ -295,6 +295,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 70vh;
     margin: var(--size-50);
     padding: var(--size-50);
 }
@@ -373,6 +374,13 @@ main {
     font-size: var(--size-100);
     border-radius: var(--radius-2);
  }
+
+ .blog__conversation-form input:focus,
+ .blog__conversation-form textarea:focus,
+ .contact__form-form input:focus,
+ .contact__form-form textarea:focus {
+    outline: 2px solid var(--color-tertiary);
+}
 
  .blog__conversation-form textarea,
  .contact__form-form textarea {
@@ -463,6 +471,7 @@ main {
 .about {
     margin: auto;
     padding: var(--size-100);
+    min-height: 70vh;
 }
 
 .about__content-img {

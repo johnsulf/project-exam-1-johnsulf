@@ -10,18 +10,6 @@
     <script src="https://kit.fontawesome.com/88c643a80f.js" crossorigin="anonymous"></script>
     <link rel="icon" href="/assets/icons/logo_bg.png">
     <link rel="stylesheet" href="/styles/style.css">
-
-    <!-- Hotjar Tracking Code for puttingLAB -->
-    <script>
-        (function (h, o, t, j, a, r) {
-            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
-            h._hjSettings = { hjid: 3712119, hjsv: 6 };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script'); r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script>
 </head>
 
 <body>
@@ -52,6 +40,7 @@
                     <h3>Write a Comment</h3>
                     <p>Please keep comments respectful and constructive.<br>Let's make this a positive space for
                         everyone!</p>
+                    <p class="mb-1 fs-italic">* = Required fields</p>
                     <form novalidate class="blog__conversation-form">
 
                         <input type="hidden" id="commentId" />
@@ -68,7 +57,7 @@
                         <textarea rows="6" id="commentComment" placeholder="Write Your Comment Here"></textarea>
                         <p class="form-error tc-error" id="commentCommentError">Please enter a comment</p>
 
-                        <button type="submit" id="commentSubmit" class="cta">submit</button>
+                        <button type="submit" id="commentSubmit" class="cta">Submit</button>
                     </form>
                 </section>
                 <section class="blog__conversation__comments"></section>

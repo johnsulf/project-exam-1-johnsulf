@@ -17,7 +17,7 @@ export function populateBlogCard(post, type = 'latest') {
         contentPadding = 'py-3 px-1';
         titleSize = 'fs-m';
         authorSize = 'fs-s';
-        readButton = `<a href="/pages/blog.html?id=${blogPost.id}" class="cta">read</a>`;
+        readButton = `<a href="/pages/blog.html?id=${blogPost.id}" class="cta">Read</a>`;
     }
 
     return `${rootElementStart} class="${classList}">

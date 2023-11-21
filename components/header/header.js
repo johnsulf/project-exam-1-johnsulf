@@ -39,10 +39,10 @@ function buildHeader() {
                     <i class="fa-solid fa-close tc-white"></i>
                 </button>
                 <ul>
-                    <li><a href="/index.html">home</a></li>
-                    <li><a href="/pages/blogs.html">blogs</a></li>
-                    <li><a href="/pages/contact.html">contact</a></li>
-                    <li><a href="/pages/about.html">about</a></li>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/pages/blogs.html">Blogs</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                    <li><a href="/pages/about.html">About</a></li>
                 </ul>
             </nav>
         </section>`;

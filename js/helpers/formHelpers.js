@@ -15,7 +15,6 @@ export function validateEmailPattern(email, errorId) {
 
 export function updateInputError(inputId, errorId, length, isSubmitted) {
     inputId.addEventListener('input', () => {
-        console.log(isSubmitted);
         if (!isSubmitted) return;
         const isValid = inputId.value.trim().length > length;
         errorId.style.display = isValid ? 'none' : 'block';
