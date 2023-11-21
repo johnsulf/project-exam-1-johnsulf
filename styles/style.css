@@ -1,9 +1,9 @@
 @import url(imports/constants.css);
 @import url(imports/variables.css);
-@import url(imports/loader.css);
 @import url(/components/header/header.css);
 @import url(/components/footer/footer.css);
 @import url(/components/toast/toast.css);
+@import url(/components/loaders/loader.css);
 
 * {
     margin: 0;
