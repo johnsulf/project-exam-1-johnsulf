@@ -4,13 +4,12 @@ import { BlogPost } from "../../js/models/blogPost.js";
 export async function buildSearchResults() {
     const searchInput = document.querySelector('#search');
     const searchResults = document.querySelector('.search-container__results');
-
-    searchInput.addEventListener('focusout', () => {
+    
+    document.addEventListener('click', () => {
         setTimeout(() => {
             searchResults.classList.remove('show-flex');
         }, 100);
     });
-
 
     searchInput.addEventListener('input', async (event) => {
         searchResults.classList.add('show-flex');
@@ -48,6 +47,5 @@ export async function buildSearchResults() {
                 searchResults.innerHTML = '<p class="ta-center tc-white">No results 😔</p>';
             }
         }, 400);
-
-    });
+    });     
 }
