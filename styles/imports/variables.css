@@ -8,8 +8,6 @@
     --color-accent: #FFD700;
 
     --color-primary20: #001F3F20;
-    --color-primary40: #001F3F40;
-    --color-primary70: #001F3F70;
     --color-secondary40: #7FDBFF40;
     --color-accent40: #FFD70040;
 
@@ -37,36 +35,26 @@
     --size-50: 0.5rem;
     --size-75: 0.75rem;
     --size-100: 1rem;
-    --size-125: 1.25rem;
     --size-150: 1.5rem;
-    --size-175: 1.75rem;
     --size-200: 2rem;
     --size-250: 2.5rem;
     --size-300: 3rem;
-    --size-350: 3.5rem;
     --size-400: 4rem;
-    --size-500: 5rem;
-    --size-600: 6rem;
 
-    --font-size-100: var(--size-25);
     --font-size-200: var(--size-50);
     --font-size-300: var(--size-75);
     --font-size-400: var(--size-100);
     --font-size-500: var(--size-150);
     --font-size-600: var(--size-200);
-    --font-size-700: var(--size-300);
-    --font-size-800: var(--size-400);
 
     /* box shadow */
     --box-shadow-light: 2px 2px 4px var(--color-black40);
-    --box-shadow-heavy: 4px 8px 16px var(--color-black40);
 
     /* border radius */
     --radius-1: 8px;
     --radius-2: 16px;
     --radius-3: 32px;
 
-    --radius-1-0: 8px 0;
     --radius-bottom-rounded: 0 0 16px 16px;
     --radius-top-rounded: 16px 16px 0 0;
     --radius-top-left: 8px 0 0 0;
@@ -90,7 +78,5 @@
                 --font-size-400: var(--size-150);
                 --font-size-500: var(--size-200);
                 --font-size-600: var(--size-300);
-                --font-size-700: var(--size-400);
-                --font-size-800: var(--size-400);
         }
     }
