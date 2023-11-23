@@ -1,5 +1,5 @@
 
-import { fetchData } from "./index.js";
+import { fetchData } from "./helpers/fetchData.js";
 import { BlogPost } from "./models/blogPost.js";
 import { buildBlogsLoader } from "../components/loaders/loaders.js";
 

@@ -1,10 +1,10 @@
-import { fetchData } from "../../js/index.js";
+import { fetchData } from "../../js/helpers/fetchData.js";
 import { BlogPost } from "../../js/models/blogPost.js";
 
 export async function buildSearchResults() {
     const searchInput = document.querySelector('#search');
     const searchResults = document.querySelector('.search-container__results');
-    
+
     document.addEventListener('click', () => {
         setTimeout(() => {
             searchResults.classList.remove('show-flex');
@@ -47,5 +47,5 @@ export async function buildSearchResults() {
                 searchResults.innerHTML = '<p class="ta-center tc-white">No results 😔</p>';
             }
         }, 400);
-    });     
+    });
 }

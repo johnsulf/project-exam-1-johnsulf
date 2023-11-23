@@ -77,6 +77,6 @@ function toggleMobileFeature(openBtnSelector, closeBtnSelector, toggleClass) {
             container.classList.remove(toggleClass);
             container.classList.remove('closing');
             closeBtn.classList.remove('show');
-        }, 400);
+        }, 300);
     });
 }

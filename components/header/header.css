@@ -13,11 +13,11 @@ header {
     width: 100%;
     max-width: 1300px;
     padding: var(--size-200) var(--size-100);
-}
 
-.header__content button {
-    border: none;
-    background: none;
+    & button {
+        border: none;
+        background: none;
+    }
 }
 
 .header__content-title {
@@ -121,19 +121,19 @@ header {
 }
 
 .header__content.mobile-menu nav.nav {
-    animation: slideInFromLeft 400ms ease-in 1;
+    animation: slideInFromLeft 300ms ease-in 1;
 }
 
 .header__content.mobile-search .header__content-search-container {
-    animation: slideInFromRight 400ms ease-in 1;
+    animation: slideInFromRight 300ms ease-in 1;
 }
 
 .header__content.mobile-menu.closing {
-    animation: slideOutToLeft 400ms ease-in 1;
+    animation: slideOutToLeft 300ms ease-out 1;
 }
 
 .header__content.mobile-search.closing {
-    animation: slideOutToRight 400ms ease-in 1;
+    animation: slideOutToRight 300ms ease-out 1;
 }
 
 .header__content.mobile-menu nav.nav ul {
