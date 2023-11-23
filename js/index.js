@@ -77,8 +77,27 @@ document.addEventListener('DOMContentLoaded', () => {
         </a>`;
     }
 
-    document.querySelector('.fa-angle-left').addEventListener('click', () => currentPage > 1 && displayPosts(--currentPage));
-    document.querySelector('.fa-angle-right').addEventListener('click', () => currentPage * postsPerPage < totalPosts && displayPosts(++currentPage));
+    document.querySelector('.fa-angle-left').addEventListener('click', () => {
+        if (currentPage > 1) {
+            latestPostsContainer.classList.add('left');
+            setTimeout(() => {
+                displayPosts(--currentPage);
+                latestPostsContainer.classList.remove('left');
+            }, 300);
+        }
+    });
+
+    document.querySelector('.fa-angle-right').addEventListener('click', () => {
+        if (currentPage * postsPerPage < totalPosts) {
+            latestPostsContainer.classList.add('right');
+            setTimeout(() => {
+                displayPosts(++currentPage)
+                latestPostsContainer.classList.remove('right');
+            }, 300);
+
+        }
+    },);
+
     window.addEventListener('resize', checkWindowSize);
 
     populatePosts();

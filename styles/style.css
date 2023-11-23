@@ -517,6 +517,14 @@ main {
     .latest-posts__posts {
         overflow-x: hidden;
     }
+
+    .latest-posts__posts.left {
+        animation: goLeft 600ms linear 1;
+    }
+
+    .latest-posts__posts.right {
+        animation: goRight 600ms linear 1;
+    }
     
     .latest-posts__posts .blog-card {
         flex: 1; 
@@ -543,7 +551,27 @@ main {
         gap: var(--size-200);
     }
 
-    .about__content-img {
-        width: 50%;
+    .about__content-img,
+    .about__content-text {
+        flex: 1;
+    }
+
+    @keyframes goLeft {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(100%);
+        }
+        
+    }
+
+    @keyframes goRight {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
     }
 }
