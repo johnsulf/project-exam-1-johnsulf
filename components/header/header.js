@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initHeader() {
     buildHeader();
-    toggleMobileFeature('.menu-open', '.menu-close', '.header__content', 'mobile-menu');
-    toggleMobileFeature('.search-open', '.search-close', '.header__content', 'mobile-search');
+    toggleMobileFeature('.menu-open', '.menu-close', 'mobile-menu');
+    toggleMobileFeature('.search-open', '.search-close', 'mobile-search');
     buildSearchResults();
 }
 
@@ -47,29 +47,36 @@ function buildHeader() {
             </nav>
         </section>`;
 
-        const currentPage = window.location.pathname;
+    const currentPage = window.location.pathname;
 
-        const navLinks = header.querySelectorAll('.nav ul li a');
+    const navLinks = header.querySelectorAll('.nav ul li a');
 
-        navLinks.forEach((link) => {
-            if (link.getAttribute('href') === currentPage) {
+    navLinks.forEach((link) => {
+        if (link.getAttribute('href') === currentPage) {
             link.parentElement.classList.add('active');
-            }
-        });
+        }
+    });
 }
 
-function toggleMobileFeature(openBtnSelector, closeBtnSelector, containerSelector, toggleClass) {
+function toggleMobileFeature(openBtnSelector, closeBtnSelector, toggleClass) {
     const openBtn = document.querySelector(openBtnSelector);
     const closeBtn = document.querySelector(closeBtnSelector);
-    const container = document.querySelector(containerSelector);
+    const container = document.querySelector('.header__content');
 
     openBtn.addEventListener('click', () => {
         container.classList.add(toggleClass);
         closeBtn.classList.add('show');
+        if (toggleClass === 'mobile-search') {
+            document.querySelector('#search').focus();
+        }
     });
 
     closeBtn.addEventListener('click', () => {
-        container.classList.remove(toggleClass);
-        closeBtn.classList.remove('show');
+        container.classList.add('closing');
+        setTimeout(() => {
+            container.classList.remove(toggleClass);
+            container.classList.remove('closing');
+            closeBtn.classList.remove('show');
+        }, 400);
     });
 }

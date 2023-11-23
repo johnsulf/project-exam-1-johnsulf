@@ -66,11 +66,17 @@ header {
     gap: var(--size-50);
     position: absolute;
     top: var(--size-250);
-    min-width: 78%;
-    max-width: 90%;
+    width: 100%;
+    max-height: 70vh;
+    overflow-y: scroll;
     background-color: var(--color-primary);
     border-radius: var(--radius-2);
     z-index: 1;
+    scrollbar-width: none;
+}
+
+.search-container__results::-webkit-scrollbar {
+    display: none;
 }
 
 .search-container__results-result {
@@ -114,6 +120,22 @@ header {
     padding-block: var(--size-400);
 }
 
+.header__content.mobile-menu nav.nav {
+    animation: slideInFromLeft 400ms ease-in 1;
+}
+
+.header__content.mobile-search .header__content-search-container {
+    animation: slideInFromRight 400ms ease-in 1;
+}
+
+.header__content.mobile-menu.closing {
+    animation: slideOutToLeft 400ms ease-in 1;
+}
+
+.header__content.mobile-search.closing {
+    animation: slideOutToRight 400ms ease-in 1;
+}
+
 .header__content.mobile-menu nav.nav ul {
     display: flex;
     justify-content: center;
@@ -152,6 +174,42 @@ header {
     display: flex;
 }
 
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutToLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slideOutToRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
 @media screen and (min-width: 800px) {
 
     .menu-open, .search-open {
@@ -182,5 +240,10 @@ header {
     header nav ul li:hover,
     .active {
         background-color: var(--color-secondary40);
+        border-radius: var(--radius-1);
+    }
+
+    .search-container__results {
+        width: 80%;
     }
 }

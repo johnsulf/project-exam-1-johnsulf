@@ -371,7 +371,7 @@ main {
     border: none;
     font-weight: 400;
 
-    font-size: var(--size-100);
+    font-size: var(--size-100) !important;
     border-radius: var(--radius-2);
  }
 
