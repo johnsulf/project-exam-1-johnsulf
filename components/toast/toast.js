@@ -21,8 +21,12 @@ export function displayToast(context, toast) {
             toast.classList.add("border-success", "bg-successBg", "tc-success", "show");
 
             setTimeout(() => {
-                toast.classList.remove("border-success", "bg-successBg", "tc-success", "show");
+                toast.classList.add("closing");
             }, 6000);
+
+            setTimeout(() => {
+                toast.classList.remove("border-success", "bg-successBg", "tc-success", "show", "closing");
+            }, 6600);
 
             break;
 
@@ -35,8 +39,12 @@ export function displayToast(context, toast) {
             toast.classList.add("border-success", "bg-successBg", "tc-success", "show");
 
             setTimeout(() => {
-                toast.classList.remove("border-success", "bg-successBg", "tc-success", "show");
+                toast.classList.add("closing");
             }, 6000);
+
+            setTimeout(() => {
+                toast.classList.remove("border-success", "bg-successBg", "tc-success", "show", "closing");
+            }, 6600);
 
             break;
 
@@ -48,8 +56,12 @@ export function displayToast(context, toast) {
             toast.classList.add("border-error", "bg-errorBg", "tc-error", "show");
 
             setTimeout(() => {
-                toast.classList.remove("border-error", "bg-errorBg", "tc-error", "show");
+                toast.classList.add("closing");
             }, 6000);
+
+            setTimeout(() => {
+                toast.classList.remove("border-error", "bg-errorBg", "tc-error", "show", "closing");
+            }, 6600);
             break;
 
         case "formError":
@@ -60,8 +72,12 @@ export function displayToast(context, toast) {
             toast.classList.add("border-error", "bg-errorBg", "tc-error", "show");
 
             setTimeout(() => {
-                toast.classList.remove("border-error", "bg-errorBg", "tc-error", "show");
+                toast.classList.add("closing");
             }, 6000);
+
+            setTimeout(() => {
+                toast.classList.remove("border-error", "bg-errorBg", "tc-error", "show", "closing");
+            }, 6600);
             break;
 
         default:

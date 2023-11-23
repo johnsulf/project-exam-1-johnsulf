@@ -2,7 +2,7 @@
 
 .toast {
     position: fixed;
-    top: 10%;
+    top: 8%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
@@ -18,4 +18,27 @@
 
  .toast.show {
     display: block;
+    animation: comeDown 400ms ease-in 1;
  }
+
+ .toast.show.closing {
+   animation: goUp 600ms ease-in 1;
+ }
+
+ @keyframes comeDown {
+   0% {
+    top: -8%;
+   }
+   100% {
+    top: 8%;
+   }
+}
+
+@keyframes goUp {
+   0% {
+    top: 8%;
+   }
+   100% {
+    top: -8%;
+   }
+}
