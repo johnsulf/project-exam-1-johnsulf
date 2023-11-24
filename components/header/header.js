@@ -20,7 +20,7 @@ function buildHeader() {
                 <i class="fa-solid fa-bars tc-pri fs-m"></i>
             </button>
             <a href="/index.html" class="header__content-title">
-                <span class="fw-600">putting</span><span class="fw-900">LA</span>
+                <span class="fw-600">putting</span><span class="fw-900">LAB</span>
             </a>
             <div class="header__content-search-container">
                 <button class="search-close" type="button" title="Close Search View">
