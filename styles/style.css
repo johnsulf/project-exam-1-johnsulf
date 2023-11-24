@@ -55,6 +55,7 @@ main {
     animation: fadeIn 200ms linear 1;
     cursor: pointer;
     overflow-y: hidden;
+    z-index: 3;
 }
 
 #backdrop.closing {
