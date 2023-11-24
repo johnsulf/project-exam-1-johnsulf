@@ -78,10 +78,10 @@ function toggleMobileFeature(openBtnSelector, closeBtnSelector, toggleClass) {
         container.classList.add("closing");
         backdrop.classList.add("closing");
         setTimeout(() => {
+            mainContent.removeChild(backdrop);
             container.classList.remove(toggleClass);
             container.classList.remove("closing");
             closeBtn.classList.remove("show");
-            mainContent.removeChild(backdrop);
         }, 300);
     }
 
@@ -89,5 +89,10 @@ function toggleMobileFeature(openBtnSelector, closeBtnSelector, toggleClass) {
 
     closeBtn.addEventListener("click", () => closeMobileMenu());
 
-    mainContent.addEventListener("click", () => closeMobileMenu());
+    mainContent.addEventListener("click", () => {
+        if (document.getElementById("backdrop")) {
+            closeMobileMenu();
+        }
+    });
+
 }

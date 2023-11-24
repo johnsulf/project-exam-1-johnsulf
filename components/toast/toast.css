@@ -22,12 +22,32 @@
  }
 
  .toast.show.closing {
-   animation: goUp 600ms ease-in 1;
+   animation: goUp 400ms ease-in 1;
  }
+
+ .countdown-line {
+   height: 4px;
+   width: 100%;
+   position: absolute;
+   left: 0;
+   bottom: 0;
+}
 
  @keyframes comeDown {
    0% {
     top: -8%;
+   }
+   20% {
+    top: 0%;
+   }
+   50% {
+    top: 8%;
+   }
+   75% {
+    top: 7%;
+   }
+   85% {
+    top: 7.5%;
    }
    100% {
     top: 8%;
@@ -38,7 +58,19 @@
    0% {
     top: 8%;
    }
+   90% {
+    top: 6%;
+   }
    100% {
     top: -8%;
+   }
+}
+
+@keyframes countdown {
+   from {
+       width: 100%;
+   }
+   to {
+       width: 0;
    }
 }

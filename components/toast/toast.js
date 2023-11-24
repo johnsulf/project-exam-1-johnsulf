@@ -16,7 +16,8 @@ export function displayToast(context, toast) {
 
             toast.innerHTML = `<h3>Success</h3>
                                     <p>Your comment was successfully posted!</p>
-                                    <p>It will display as soon as it has been approved by a moderator!</p>`;
+                                    <p>It will display as soon as it has been approved by a moderator!</p>
+                                    <div class="countdown-line bg-success"></div>`;
 
             toast.classList.add("border-success", "bg-successBg", "tc-success", "show");
 
@@ -26,7 +27,7 @@ export function displayToast(context, toast) {
 
             setTimeout(() => {
                 toast.classList.remove("border-success", "bg-successBg", "tc-success", "show", "closing");
-            }, 6600);
+            }, 6400);
 
             break;
 
@@ -34,7 +35,8 @@ export function displayToast(context, toast) {
             toast.classList.remove("border-info", "bg-infoBg", "tc-ter", "show");
             toast.innerHTML = `<h3>Success</h3>
                                     <p>Your form was successfully submitted!</p>
-                                    <p>Thank you for contacting us!</p>`;
+                                    <p>Thank you for contacting us!</p>
+                                    <div class="countdown-line bg-success"></div>`;
 
             toast.classList.add("border-success", "bg-successBg", "tc-success", "show");
 
@@ -44,7 +46,7 @@ export function displayToast(context, toast) {
 
             setTimeout(() => {
                 toast.classList.remove("border-success", "bg-successBg", "tc-success", "show", "closing");
-            }, 6600);
+            }, 6400);
 
             break;
 
@@ -52,7 +54,8 @@ export function displayToast(context, toast) {
             toast.classList.remove("border-info", "bg-infoBg", "tc-ter", "show");
             toast.innerHTML = `<h3>Error</h3>
                                     <p>Oh no! An error has occurred!</p>
-                                    <p>Please try again.</p>`;
+                                    <p>Please try again.</p>
+                                    <div class="countdown-line bg-error"></div>`;
             toast.classList.add("border-error", "bg-errorBg", "tc-error", "show");
 
             setTimeout(() => {
@@ -61,14 +64,15 @@ export function displayToast(context, toast) {
 
             setTimeout(() => {
                 toast.classList.remove("border-error", "bg-errorBg", "tc-error", "show", "closing");
-            }, 6600);
+            }, 6400);
             break;
 
         case "formError":
             toast.classList.remove("border-info", "bg-infoBg", "tc-ter", "show");
             toast.innerHTML = `<h3>Error</h3>
                                         <p>There are errors in your form.</p>
-                                        <p>Please fix and try again.</p>`;
+                                        <p>Please fix and try again.</p>
+                                        <div class="countdown-line bg-error"></div>`;
             toast.classList.add("border-error", "bg-errorBg", "tc-error", "show");
 
             setTimeout(() => {
@@ -77,11 +81,16 @@ export function displayToast(context, toast) {
 
             setTimeout(() => {
                 toast.classList.remove("border-error", "bg-errorBg", "tc-error", "show", "closing");
-            }, 6600);
+            }, 6400);
             break;
 
         default:
             break;
+    }
+
+    if (toast.querySelector(".countdown-line")) {
+        const countdownLine = toast.querySelector(".countdown-line");
+        countdownLine.style.animation = `countdown 6400ms linear`;
     }
 
 }

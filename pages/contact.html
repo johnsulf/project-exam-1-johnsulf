@@ -57,7 +57,7 @@
             <form novalidate class="contact__form-form">
 
                 <label for="contactName">Name*</label>
-                <input type="text" id="contactName" placeholder="Write Your Name Here">
+                <input type="text" id="contactName" placeholder="Write Your Name Here (minimum 6 characters)">
                 <p class="form-error tc-error" id="contactNameError">Name has to be longer than 5
                     characters</p>
 
@@ -66,12 +66,13 @@
                 <p class="form-error tc-error" id="contactEmailError">Please provide a valid email</p>
 
                 <label for="contactSubject">Subject*</label>
-                <input type="text" id="contactSubject" placeholder="Write Your Subject Here">
+                <input type="text" id="contactSubject" placeholder="Write Your Subject Here (minimum 16 characters)">
                 <p class="form-error tc-error" id="contactSubjectError">Subject has to be longer than 15
                     characters</p>
 
                 <label for="contactMessage">Message*</label>
-                <textarea rows="6" id="contactMessage" placeholder="Write Your Message Here"></textarea>
+                <textarea rows="6" id="contactMessage"
+                    placeholder="Write Your Message Here (minimum 27 characters)"></textarea>
                 <p class="form-error tc-error" id="contactMessageError">Message has to be longer than 26
                     characters</p>
 
