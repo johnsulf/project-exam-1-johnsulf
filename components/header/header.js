@@ -61,22 +61,33 @@ function buildHeader() {
 function toggleMobileFeature(openBtnSelector, closeBtnSelector, toggleClass) {
     const openBtn = document.querySelector(openBtnSelector);
     const closeBtn = document.querySelector(closeBtnSelector);
+    const mainContent = document.querySelector("main");
     const container = document.querySelector(".header__content");
 
-    openBtn.addEventListener("click", () => {
+    function showMobileMenu() {
         container.classList.add(toggleClass);
         closeBtn.classList.add("show");
+        mainContent.innerHTML += `<div id="backdrop"></div>`
         if (toggleClass === "mobile-search") {
             document.querySelector("#search").focus();
         }
-    });
+    }
 
-    closeBtn.addEventListener("click", () => {
+    function closeMobileMenu() {
+        const backdrop = document.getElementById("backdrop");
         container.classList.add("closing");
+        backdrop.classList.add("closing");
         setTimeout(() => {
             container.classList.remove(toggleClass);
             container.classList.remove("closing");
             closeBtn.classList.remove("show");
+            mainContent.removeChild(backdrop);
         }, 300);
-    });
+    }
+
+    openBtn.addEventListener("click", () => showMobileMenu());
+
+    closeBtn.addEventListener("click", () => closeMobileMenu());
+
+    mainContent.addEventListener("click", () => closeMobileMenu());
 }
