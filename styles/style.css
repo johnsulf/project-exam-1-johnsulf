@@ -573,6 +573,10 @@ main {
         gap: var(--size-200);
     }
 
+    .about__content-img {
+        width: 50%;
+    }
+
     .about__content-img,
     .about__content-text {
         flex: 1;
