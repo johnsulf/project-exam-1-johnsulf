@@ -1,9 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     buildFooter();
 });
 
 function buildFooter() {
-    const footer = document.querySelector('#footer');
+    const footer = document.querySelector("#footer");
     footer.innerHTML =
         `<nav>
             <ul>

@@ -27,14 +27,14 @@ const submitButton = document.querySelector("#commentSubmit");
 let isSubmitButtonPressed = false;
 
 export async function fetchAndDisplayComments() {
-    const postId = new URLSearchParams(window.location.search).get('id');
-    const commentsSection = document.querySelector('.blog__conversation__comments');
+    const postId = new URLSearchParams(window.location.search).get("id");
+    const commentsSection = document.querySelector(".blog__conversation__comments");
 
     try {
         const response = await fetch(`${baseUrl()}/comments?post=${postId}`);
         if (response.ok) {
             const comments = await response.json();
-            let commentsHTML = '<h3>Comments</h3>';
+            let commentsHTML = "<h3>Comments</h3>";
 
             if (comments.length === 0) {
                 commentsHTML += `<p>There are no comments yet. Start the conversation!</p>`;
@@ -66,17 +66,17 @@ async function validateAndSubmitForm(event) {
 
     if (!validateForm()) {
         if (isSubmitButtonPressed) {
-            displayToast('formError', toast);
+            displayToast("formError", toast);
         }
         isSubmitButtonPressed = true;
         updateErrors();
     } else {
         try {
             await submitForm();
-            displayToast('formSuccess', toast);
+            displayToast("formSuccess", toast);
         } catch (e) {
-            displayToast('formSubmitError', toast);
-            console.error('Form submission error:', e);
+            displayToast("formSubmitError", toast);
+            console.error("Form submission error:", e);
         }
     }
 
@@ -100,7 +100,7 @@ function updateErrors() {
 
 async function submitForm() {
 
-    const postId = new URLSearchParams(window.location.search).get('id');
+    const postId = new URLSearchParams(window.location.search).get("id");
 
     const formData = JSON.stringify({
         post: postId,
@@ -109,24 +109,24 @@ async function submitForm() {
         content: comment.value,
     });
 
-    displayToast('waiting', toast);
+    displayToast("waiting", toast);
 
     try {
         const response = await fetch(`${baseUrl()}/comments`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
             body: formData,
         });
 
         if (response.ok) {
-            displayToast('commentSuccess', toast);
+            displayToast("commentSuccess", toast);
 
             clearInputFields({ "name": name, "email": email, "comment": comment });
 
             isSubmitButtonPressed = true;
         }
     } catch (error) {
-        displayToast('error', toast);
+        displayToast("error", toast);
         console.error("Fetch error:", error);
     }
 }

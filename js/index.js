@@ -2,7 +2,7 @@ import { buildCategoriesLoader, buildRecentBlogLoader, buildLatestPostsLoader } 
 import { populateBlogCard } from "./helpers/populateBlogCard.js";
 import { fetchData } from "./helpers/fetchData.js";
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     const baseUrl = "https://wp.erlendjohnsen.com/wp-json/wp/v2/";
     const postsEmbedUrl = "posts?_embed&per_page=20";
     const categoriesUrl = "categories";
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function initializePosts(posts) {
         allPosts = posts;
         totalPosts = posts.length - 1;
-        recentBlogContainer.innerHTML = populateBlogCard(allPosts[0], 'recent');
+        recentBlogContainer.innerHTML = populateBlogCard(allPosts[0], "recent");
     }
 
     function displayPosts() {
@@ -52,19 +52,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateLatestPostsHtml([startIndex, endIndex]) {
-        let html = '';
+        let html = "";
         for (let i = startIndex; i <= endIndex; i++) {
-            html += populateBlogCard(allPosts[i], 'latest');
+            html += populateBlogCard(allPosts[i], "latest");
         }
         latestPostsContainer.innerHTML = html;
-        document.querySelector('.latest-posts__amount p').innerHTML = `<span class="fw-700">${startIndex}-${endIndex}</span> of ${totalPosts}`;
+        document.querySelector(".latest-posts__amount p").innerHTML = `<span class="fw-700">${startIndex}-${endIndex}</span> of ${totalPosts}`;
     }
 
     async function populateCategories() {
         categoriesContainer.innerHTML = buildCategoriesLoader();
         const categories = await fetchData(`${baseUrl}${categoriesUrl}`, categoriesContainer);
         if (categories) {
-            categoriesHtml = categories.filter(c => c.name !== 'Uncategorized').map(renderCategoryCard).join('');
+            categoriesHtml = categories.filter(c => c.name !== "Uncategorized").map(renderCategoryCard).join("");
             categoriesContainer.innerHTML = categoriesHtml;
         }
     }
@@ -77,28 +77,28 @@ document.addEventListener('DOMContentLoaded', () => {
         </a>`;
     }
 
-    document.querySelector('.fa-angle-left').addEventListener('click', () => {
+    document.querySelector(".fa-angle-left").addEventListener("click", () => {
         if (currentPage > 1) {
-            latestPostsContainer.classList.add('left');
+            latestPostsContainer.classList.add("changing");
             setTimeout(() => {
                 displayPosts(--currentPage);
-                latestPostsContainer.classList.remove('left');
+                latestPostsContainer.classList.remove("changing");
             }, 300);
         }
     });
 
-    document.querySelector('.fa-angle-right').addEventListener('click', () => {
+    document.querySelector(".fa-angle-right").addEventListener("click", () => {
         if (currentPage * postsPerPage < totalPosts) {
-            latestPostsContainer.classList.add('right');
+            latestPostsContainer.classList.add("changing");
             setTimeout(() => {
                 displayPosts(++currentPage)
-                latestPostsContainer.classList.remove('right');
+                latestPostsContainer.classList.remove("changing");
             }, 300);
 
         }
     },);
 
-    window.addEventListener('resize', checkWindowSize);
+    window.addEventListener("resize", checkWindowSize);
 
     populatePosts();
     populateCategories();

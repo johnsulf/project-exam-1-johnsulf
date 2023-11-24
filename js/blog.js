@@ -14,7 +14,7 @@ const blogImgDialog = document.querySelector("#blogImgDialog");
 
 let blog;
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     fetchBlogData();
     fetchAndDisplayComments();
 });
@@ -23,20 +23,20 @@ async function fetchBlogData() {
     buildBlogLoader(blogHeader, blogImage, blogContent);
 
     let blogPost;
-    const id = new URLSearchParams(window.location.search).get('id');
+    const id = new URLSearchParams(window.location.search).get("id");
 
-     try {
+    try {
         const response = await fetch(`${baseUrl()}/posts/${id}?_embed`);
         blog = await response.json();
         blogPost = BlogPost.fromJson(blog);
 
         document.title += ` ${blogPost.title}`;
-        document.querySelector('meta[name="description"]').setAttribute("content", blogPost.excerpt);
-      
-        document.querySelector('meta[property="og:title"]').setAttribute("content", blogPost.title);
-        document.querySelector('meta[property="og:description"]').setAttribute("content", blogPost.excerpt);
-        document.querySelector('meta[property="og:image"]').setAttribute("content", blogPost.featuredImage);
-        document.querySelector('meta[property="og:url"]').setAttribute("content", `${baseUrl()}/pages/blog.html?id=${id}`);
+        document.querySelector("meta[name='description']").setAttribute("content", blogPost.excerpt);
+
+        document.querySelector("meta[property='og:title']").setAttribute("content", blogPost.title);
+        document.querySelector("meta[property='og:description']").setAttribute("content", blogPost.excerpt);
+        document.querySelector("meta[property='og:image']").setAttribute("content", blogPost.featuredImage);
+        document.querySelector("meta[property='og:url']").setAttribute("content", `${baseUrl()}/pages/blog.html?id=${id}`);
 
         blogCategory.innerHTML = `${blogPost.category}`;
         blogHeader.innerHTML = `${blogPost.title}`;
@@ -53,16 +53,16 @@ async function fetchBlogData() {
                                     <p class="ta-center w-full">Oops... Something went wrong😞</p>
                                     <button class="cta" onclick="history.back()" type="button" title="Go back">Go back</button>
                                 </div> `;
-    } 
+    }
 
-    blogImage.addEventListener('click', () => {
+    blogImage.addEventListener("click", () => {
         blogImgDialog.innerHTML = `<img src="${blogPost.featuredImage}" 
         alt="${blogPost.featuredImageAlt}"
         srcset="">`
         blogImgDialog.showModal();
     });
 
-    blogImgDialog.addEventListener('click', (event) => {
+    blogImgDialog.addEventListener("click", (event) => {
         if (event.target.localName != "img") {
             blogImgDialog.close();
         }

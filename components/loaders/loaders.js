@@ -1,5 +1,5 @@
 export function buildLatestPostsLoader() {
-    let latestPostsLoader = '';
+    let latestPostsLoader = "";
     for (let i = 0; i < 3; i++) {
         latestPostsLoader += `<a href="/pages/blog.html?id=77" class="blog-card bs-1 loading">
                                 <div class="load-overlay"></div> 
@@ -17,7 +17,7 @@ export function buildLatestPostsLoader() {
 }
 
 export function buildCategoriesLoader() {
-    let categoriesCardLoaderHtml = '';
+    let categoriesCardLoaderHtml = "";
     for (let i = 0; i < 4; i++) {
         categoriesCardLoaderHtml += `<a href="#" class="categories-card loading">  
                                         <div class="load-overlay"></div>          
@@ -31,7 +31,7 @@ export function buildCategoriesLoader() {
 }
 
 export function buildRecentBlogLoader() {
-    let recentBlogLoader = '';
+    let recentBlogLoader = "";
 
     recentBlogLoader += `<div class="blog-card bg-white loading">
                             <div class="load-overlay"></div> 
@@ -55,15 +55,15 @@ export function buildBlogLoader(header, image, content) {
     image.innerHTML = `<div class="blog-image my-2 h-15 loading" style="background-color: var(--color-primary20)">
                             <div class="load-overlay"></div>
                         </div>`;
-    let contentHTML = '';
-    for (let i = 0; i < 20; i++) { 
+    let contentHTML = "";
+    for (let i = 0; i < 20; i++) {
         contentHTML += `<div class="line loading mb-1"><div class="load-overlay"></div></div>`;
     }
     content.innerHTML = contentHTML;
 }
 
 export function buildBlogsLoader() {
-    let blogsLoader = '';
+    let blogsLoader = "";
     for (let i = 0; i < 6; i++) {
         blogsLoader += `<div class="blogs-card loading">
                         <div class="load-overlay"></div> 

@@ -1,19 +1,19 @@
 import { buildSearchResults } from "./search.js";
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     initHeader();
 });
 
 function initHeader() {
     buildHeader();
-    toggleMobileFeature('.menu-open', '.menu-close', 'mobile-menu');
-    toggleMobileFeature('.search-open', '.search-close', 'mobile-search');
+    toggleMobileFeature(".menu-open", ".menu-close", "mobile-menu");
+    toggleMobileFeature(".search-open", ".search-close", "mobile-search");
     buildSearchResults();
 }
 
 
 function buildHeader() {
-    const header = document.querySelector('#header');
+    const header = document.querySelector("#header");
     header.innerHTML =
         `<section class="header__content">
             <button class="menu-open" type="button" title="Open Navigation Menu">
@@ -49,11 +49,11 @@ function buildHeader() {
 
     const currentPage = window.location.pathname;
 
-    const navLinks = header.querySelectorAll('.nav ul li a');
+    const navLinks = header.querySelectorAll(".nav ul li a");
 
     navLinks.forEach((link) => {
-        if (link.getAttribute('href') === currentPage) {
-            link.parentElement.classList.add('active');
+        if (link.getAttribute("href") === currentPage) {
+            link.parentElement.classList.add("active");
         }
     });
 }
@@ -61,22 +61,22 @@ function buildHeader() {
 function toggleMobileFeature(openBtnSelector, closeBtnSelector, toggleClass) {
     const openBtn = document.querySelector(openBtnSelector);
     const closeBtn = document.querySelector(closeBtnSelector);
-    const container = document.querySelector('.header__content');
+    const container = document.querySelector(".header__content");
 
-    openBtn.addEventListener('click', () => {
+    openBtn.addEventListener("click", () => {
         container.classList.add(toggleClass);
-        closeBtn.classList.add('show');
-        if (toggleClass === 'mobile-search') {
-            document.querySelector('#search').focus();
+        closeBtn.classList.add("show");
+        if (toggleClass === "mobile-search") {
+            document.querySelector("#search").focus();
         }
     });
 
-    closeBtn.addEventListener('click', () => {
-        container.classList.add('closing');
+    closeBtn.addEventListener("click", () => {
+        container.classList.add("closing");
         setTimeout(() => {
             container.classList.remove(toggleClass);
-            container.classList.remove('closing');
-            closeBtn.classList.remove('show');
+            container.classList.remove("closing");
+            closeBtn.classList.remove("show");
         }, 300);
     });
 }

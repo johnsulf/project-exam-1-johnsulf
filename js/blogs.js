@@ -15,7 +15,7 @@ let activeTab = 0;
 let categoryId = '0';
 let perPage = 10;
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     initTabsAndHeader();
 });
 
@@ -26,7 +26,7 @@ async function setCards(perPage) {
     blogsCardsContainer.innerHTML = "";
 
     posts.forEach(post => {
-        if (categoryId === '0' || post.categories[0].toString() === categoryId) {
+        if (categoryId === "0" || post.categories[0].toString() === categoryId) {
             const blogPost = BlogPost.fromJson(post);
             const blogCardHtml = `
             <div class="blogs-card">
@@ -51,6 +51,11 @@ async function setCards(perPage) {
                     </section>
                 </a>
             </div>`;
+
+            blogsCardsContainer.classList.add("changing");
+            setTimeout(() => {
+                blogsCardsContainer.classList.remove("changing");
+            }, 600);
             blogsCardsContainer.innerHTML += blogCardHtml;
         }
     });
@@ -62,7 +67,7 @@ async function setCards(perPage) {
     }
 }
 
-moreButton.addEventListener('click', () => {
+moreButton.addEventListener("click", () => {
     perPage = perPage + 5;
     setCards(perPage);
 })
@@ -83,14 +88,14 @@ async function initTabsAndHeader() {
         if (i != 0) {
             if (i === activeTab) updateH1(i - 1);
         } else {
-            headerH1.innerText = 'All Blogs';
+            headerH1.innerText = "All Blogs";
         }
 
-        tab.addEventListener('click', () => {
+        tab.addEventListener("click", () => {
             toggleTabSelection(i);
             if (i === 0) {
-                headerH1.innerText = 'All Blogs';
-                headerParagraph.innerText = '';
+                headerH1.innerText = "All Blogs";
+                headerParagraph.innerText = "";
             } else {
                 updateH1(i - 1);
             }
@@ -99,10 +104,10 @@ async function initTabsAndHeader() {
 }
 
 const categoryMap = {
-    '34': 1,
-    '32': 2,
-    '33': 3,
-    '31': 4
+    "34": 1,
+    "32": 2,
+    "33": 3,
+    "31": 4
 };
 
 const reverseCategoryMap = Object.fromEntries(
@@ -114,12 +119,13 @@ function toggleTabSelection(index) {
     tabs[index].classList.add("selected");
     activeTab = index;
 
-    categoryId = reverseCategoryMap[activeTab] || '0';
+    categoryId = reverseCategoryMap[activeTab] || "0";
+
     setCards(perPage);
 }
 
 function getCategoryId() {
-    categoryId = new URLSearchParams(window.location.search).get('category');
+    categoryId = new URLSearchParams(window.location.search).get("category");
     activeTab = categoryMap[categoryId] || 0;
     toggleTabSelection(activeTab);
 }

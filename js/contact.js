@@ -39,17 +39,17 @@ async function validateAndSubmitForm(event) {
 
     if (!validateForm()) {
         if (isSubmitButtonPressed) {
-            displayToast('formError', toast);
+            displayToast("formError", toast);
         }
         isSubmitButtonPressed = true;
         updateErrors();
     } else {
         try {
             await submitForm();
-            displayToast('formSuccess', toast);
+            displayToast("formSuccess", toast);
         } catch (e) {
-            displayToast('formSubmitError', toast);
-            console.error('Form submission error:', e);
+            displayToast("formSubmitError", toast);
+            console.error("Form submission error:", e);
         }
     }
 
@@ -80,23 +80,23 @@ async function submitForm() {
     formData.append("your-subject", subject.value);
     formData.append("your-message", message.value);
 
-    displayToast('waiting', toast);
+    displayToast("waiting", toast);
 
     try {
         const response = await fetch(url, {
-            method: 'POST',
+            method: "POST",
             body: formData
         });
 
         if (response.ok) {
-            displayToast('contactSuccess', toast);
+            displayToast("contactSuccess", toast);
 
             clearInputFields({ "name": name, "email": email, "subject": subject, "message": message });
 
             isSubmitButtonPressed = true;
         }
     } catch (e) {
-        displayToast('error', toast);
-        console.error('Error: ' + e);
+        displayToast("error", toast);
+        console.error("Error: " + e);
     }
 }

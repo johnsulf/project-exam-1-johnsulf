@@ -7,7 +7,7 @@ export async function fetchData(url, container) {
         return await response.json();
     } catch (e) {
         console.error(e);
-        container.innerHTML = '<p class="ta-center w-full">Oops... Something went wrong😞</p>';
+        container.innerHTML = "<p class='ta-center w-full'>Oops... Something went wrong😞</p>";
         return null;
     }
 }

@@ -2,25 +2,25 @@ import { fetchData } from "../../js/helpers/fetchData.js";
 import { BlogPost } from "../../js/models/blogPost.js";
 
 export async function buildSearchResults() {
-    const searchInput = document.querySelector('#search');
-    const searchResults = document.querySelector('.search-container__results');
+    const searchInput = document.querySelector("#search");
+    const searchResults = document.querySelector(".search-container__results");
 
-    document.addEventListener('click', () => {
+    document.addEventListener("click", () => {
         setTimeout(() => {
-            searchResults.classList.remove('show-flex');
+            searchResults.classList.remove("show-flex");
         }, 100);
     });
 
-    searchInput.addEventListener('input', async (event) => {
-        searchResults.classList.add('show-flex');
+    searchInput.addEventListener("input", async (event) => {
+        searchResults.classList.add("show-flex");
         const searchTerm = event.target.value.trim();
 
-        if (searchTerm === '') {
-            searchResults.innerHTML = '';
+        if (searchTerm === "") {
+            searchResults.innerHTML = "";
             return;
         }
 
-        searchResults.innerHTML = '<p class="ta-center tc-white">Searching 🧐</p>';
+        searchResults.innerHTML = "<p class='ta-center tc-white'>Searching 🧐</p>";
 
         const url = `https://wp.erlendjohnsen.com/wp-json/wp/v2/posts?_embed&search=${searchTerm}`;
 
@@ -44,7 +44,7 @@ export async function buildSearchResults() {
                 });
                 searchResults.innerHTML = resultsHTML;
             } else {
-                searchResults.innerHTML = '<p class="ta-center tc-white">No results 😔</p>';
+                searchResults.innerHTML = "<p class='ta-center tc-white'>No results 😔</p>";
             }
         }, 400);
     });
