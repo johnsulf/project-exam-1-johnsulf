@@ -542,6 +542,7 @@ main {
 
     .latest-posts__posts {
         overflow-x: hidden;
+        justify-content: center;
     }
 
     .latest-posts__posts.changing {
