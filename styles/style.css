@@ -371,8 +371,8 @@ main {
     font-size: var(--font-size-200);
  }
 
- .blog-content p,
- .blog-content li {
+ .blog p,
+ .blog li {
     font-size: var(--font-size-350);
  }
 
