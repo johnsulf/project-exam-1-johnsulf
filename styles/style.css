@@ -371,6 +371,11 @@ main {
     font-size: var(--font-size-200);
  }
 
+ .blog-content p,
+ .blog-content li {
+    font-size: var(--font-size-350);
+ }
+
 .blog__conversation {
     display: flex;
     flex-direction: column;
@@ -392,7 +397,7 @@ main {
     border: none;
     font-weight: 400;
 
-    font-size: var(--size-100) !important;
+    font-size: 1rem !important;
     border-radius: var(--radius-2);
  }
 
