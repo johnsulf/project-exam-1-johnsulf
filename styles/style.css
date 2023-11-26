@@ -374,7 +374,9 @@ main {
  .blog p,
  .blog li,
  .welcome p,
- .about p {
+ .about p,
+ .contact p,
+ .contact a {
     font-size: var(--font-size-350);
  }
 
