@@ -372,7 +372,9 @@ main {
  }
 
  .blog p,
- .blog li {
+ .blog li,
+ .welcome p,
+ .about p {
     font-size: var(--font-size-350);
  }
 
