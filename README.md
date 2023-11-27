@@ -19,7 +19,7 @@ No frameworks are used in this project.
 1. Clone the repo:
 Open a command window and navigate to destination you want to save the project to. Then run:
 ```bash
-git clone https://github.com/johnsulf/project-exam-1.git
+git clone https://github.com/johnsulf/project-exam-1-johnsulf.git
 ```
 
 ### Running
