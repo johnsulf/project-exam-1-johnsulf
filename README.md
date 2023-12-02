@@ -2,15 +2,15 @@
 
 ![image](https://erlendjohnsen.com/assets/images/puttinglab.jpg)
 
-A simple overview of the use/purpose of the project.
-
 ## Description
+puttingLAB Blog is my assignment for Project Exam 1 in my Front-end development studies at Noroff.
+In short, the task was to create a blog where the front-end was written in HTML, CSS and JavaScript. WordPress should be used as a headless CMS to create blog content, and WordPress RestAPI to display blog content on the blog.
 
+All blog post texts and images are created using ChatGPT.
 
 ## Built With
 
-No frameworks are used in this project.
-- HTML, CSS and JavaScript
+puttingLAB is built with HTML, CSS and vanilla JavaScript. No frameworks are used.
 
 ## Getting Started
 
@@ -24,29 +24,36 @@ git clone https://github.com/johnsulf/project-exam-1-johnsulf.git
 
 ### Running
 
-Here is where you detail how to run the app. It typically involves the commands you'd need to run to start the project e.g.
-
-To run the app, run the following commands:
-
-```bash
-npm run start
-```
+The project does'nt require anything special to run.
 
 ## Contributing
 
-Here you can detail any information you want to provide regarding contributing to the project. For big projects you will usually have a separate `CONTRIBUTING.md` and link to it, but for smaller projects you can simply include instructions here. These instructions can simply detail the process you want a person to take, such as to make sure to open a pull request so code can be reviewed.
+If you would like to contribute to the project, please follow these steps:
+
+1. Fork the repository
+2. Create a new branch:
+```bash
+git checkout -b my-new-feature.
+```
+3. Make your changes.
+4. Stage and Commit your changes:
+```bash
+git commit -am 'Add a relevant commit message'
+```
+5. Push to the branch:
+```bash
+git push origin my-new-feature
+```
+6. Submit a pull request
 
 ## Contact
 
-This is where you can leave your social links for people to contact you, such as a LinkedIn profile or Twitter link e.g.
+Any questions? Please contact me!
+[Email Me About the Project](mailto:erlendjohns@gmail.com?subject=Project%20Inquiry&body=Hi,%0A%0AI%20am%20interested%20in%20...)
 
-[My Twitter page](www.twitter.com)
+[My Twitter profile](https://twitter.com/johnsulf)
 
-[My LinkedIn page](www.linkedin.com)
-
-## License
-
-You can link to your license file here if you're using one, or mention what license the codebase falls under. If you're unsure then you can simply delete this section.
+[My Facebook profile](https://www.facebook.com/johnsulf)
 
 ## Acknowledgments
 
