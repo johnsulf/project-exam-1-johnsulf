@@ -48,14 +48,10 @@ git push origin my-new-feature
 
 ## Contact
 
-Any questions? Please contact me!
-
 [Email Me About the Project](mailto:erlendjohns@gmail.com?subject=puttingLAB%20repo%20inquiry&body=Hi%20Erlend,%0A%0A)
+
+## Social Media
 
 [My Twitter profile](https://twitter.com/johnsulf)
 
 [My Facebook profile](https://www.facebook.com/johnsulf)
-
-## Acknowledgments
-
-This is where you can add any acknowledgements if you'd like, such as to people who have helped you or any code snippets you'd like to mention. You can delete this section if you don't have any acknowledgements to make.
