@@ -49,7 +49,8 @@ git push origin my-new-feature
 ## Contact
 
 Any questions? Please contact me!
-[Email Me About the Project](mailto:erlendjohns@gmail.com?subject=Project%20Inquiry&body=Hi,%0A%0AI%20am%20interested%20in%20...)
+
+[Email Me About the Project](mailto:erlendjohns@gmail.com?subject=puttingLAB%20repo%20inquiry&body=Hi%20Erlend,%0A%0A)
 
 [My Twitter profile](https://twitter.com/johnsulf)
 
