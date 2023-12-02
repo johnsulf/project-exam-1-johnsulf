@@ -3,7 +3,7 @@
 ![image](https://erlendjohnsen.com/assets/images/puttinglab.jpg)
 
 ## Description
-puttingLAB Blog is my assignment for Project Exam 1 in my Front-end development studies at Noroff.
+puttingLAB Blog is the result of Project Exam 1 in my Front-end development studies at Noroff.
 In short, the task was to create a blog where the front-end was written in HTML, CSS and JavaScript. WordPress should be used as a headless CMS to create blog content, and WordPress RestAPI to display blog content on the blog.
 
 All blog post texts and images are created using ChatGPT.
