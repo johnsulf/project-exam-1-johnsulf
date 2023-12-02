@@ -3,14 +3,29 @@
 ![image](https://erlendjohnsen.com/assets/images/puttinglab.jpg)
 
 ## Description
-puttingLAB Blog is the result of Project Exam 1 in my Front-end development studies at Noroff.
-In short, the task was to create a blog where the front-end was written in HTML, CSS and JavaScript. WordPress should be used as a headless CMS to create blog content, and WordPress RestAPI to display blog content on the blog.
+puttingLAB Blog is a dynamic, interactive blog site developed as my Project Exam 1 submission for Front-end Development studies at Noroff. This project demonstrates my skills in creating a fully functional blog with a modern design, utilizing HTML, CSS, and JavaScript, and integrating WordPress as a headless CMS.
 
-All blog post texts and images are created using ChatGPT.
+Key features include:
+
+- Home Page with Carousel: A 'Latest Posts' section featuring a carousel for desktop users, allowing navigation through posts.
+- Responsive Design: Adaptability for mobile users, with an alternative layout to the carousel.
+- Blog Posts Page: Displays the first 10 blog posts with an option to load more, enriching user engagement.
+- Dynamic Blog Specific Pages: Each blog post page is built dynamically using query string parameters, with a customizable title reflecting the clicked blog post.
+- Image Modal View: An interactive feature where clicking on blog images opens a modal for an enlarged view.
+- Contact Page with Validation: A user-friendly contact form with JavaScript validation for fields including name, email, subject, and message content.
+- Content for the blog, including texts and images, is managed through WordPress, serving as a headless CMS, and is fetched using the WordPress REST API.
+- Text and images for all blog posts are created using ChatGPT with GPT-4 and Dall-E.
 
 ## Built With
 
-puttingLAB is built with HTML, CSS and vanilla JavaScript. No frameworks are used.
+This project is crafted using:
+
+- HTML
+- CSS
+- Vanilla JavaScript
+- WordPress (Headless CMS)
+
+No external frameworks or libraries were used, emphasizing core web development skills.
 
 ## Getting Started
 
