@@ -48,7 +48,7 @@ git push origin my-new-feature
 
 ## Contact
 
-[Email Me About the Project](mailto:erlendjohns@gmail.com?subject=puttingLAB%20repo%20inquiry&body=Hi%20Erlend,%0A%0A)
+Any questions about this project? [Send me an email!](mailto:erlendjohns@gmail.com?subject=puttingLAB%20repo%20inquiry&body=Hi%20Erlend,%0A%0A)
 
 ## Social Media
 
