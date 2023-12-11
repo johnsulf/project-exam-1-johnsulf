@@ -4,11 +4,13 @@
 
 ## Description
 puttingLAB Blog is a dynamic, interactive blog site developed as my Project Exam 1 submission for Front-end Development studies at Noroff. This project demonstrates my skills in creating a fully functional blog with a modern design, utilizing HTML, CSS, and JavaScript, and integrating WordPress as a headless CMS using their REST API.
+Visit puttingLAB [here](https://puttinglab.netlify.app)
 
 ### Key features
 
 - Carousel: A 'Latest Posts' section featuring a carousel on the Home page.
 - Mobile first: The blog is designed with the mobile-first principle.
+- Search: The header has an easy accessible search bar for quick access to blog posts.
 - Tab bar: Categories tab bar for faster access to blog posts.
 - Dynamic Blog Specific Pages: Each blog post page is built dynamically using query string parameters, with a customizable title and description reflecting the clicked blog post.
 - Image Modal View: An interactive feature where clicking on blog images opens a modal for an enlarged view.
